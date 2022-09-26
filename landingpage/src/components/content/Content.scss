@@ -1,0 +1,642 @@
+.getStartedButton{
+    width: 250px;
+    height: 60px;
+    margin-left: 150px;
+    margin-top: 50px;
+
+    border-radius: 10px;
+    border: solid;
+    border-color: #F53838;
+
+    -webkit-box-shadow: 0px 5px 15px 5px #F5383859; 
+    box-shadow: 0px 5px 15px 5px #F5383859;
+
+    font-family: "Rubik";
+    font-weight: 700;
+
+    background-color: #F53838;
+
+    color:white;
+}
+
+.bigText1{
+    width: 555px;
+    height: 140px;
+    margin-left: 150px;
+    margin-top: 129.15px;
+
+    font-family: "Rubik";
+    text-align: left;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 70px;
+
+    color: #0B132A;
+}
+
+.smallText1{
+    width: 555px;
+    height: 60px;
+    margin-left: 150px;
+    margin-top: 20px;
+
+    font-family: "Rubik";
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+
+    color: #4F5665;
+}
+
+.illustration1{
+    width: 611.24px;
+    height: 382.44px;
+    margin-left: 40.76px;
+    margin-top: 101.49px;
+
+}
+
+.box{
+    width: 1140px;
+    height: 200px;
+    margin-left: 150px;
+    margin-top: 103px;
+    padding-top: 36.5px;
+
+    background: white;
+    border-radius: 10px;  
+   
+}
+
+.icon{
+    width: 55px;
+    height: 55px;
+    margin-left: 91px;
+    margin-top: 36px;
+
+}
+
+.boxValue1{
+    width: 54px;
+    height: 65px;
+    margin-left: 36.5px;
+    margin-right: 129px;
+    margin-top: 31px;
+    text-align: left;
+}
+.boxValue2{
+    width: 91px;
+    height: 65px;
+    margin-left: 36.5px;
+    margin-right: 134.5px;
+    margin-top: 31px;
+    text-align: left;
+}
+.boxValue3{
+    width: 71px;
+    height: 65px;
+    margin-left: 36.5px;
+    margin-right: 90.5px;
+    margin-top: 31px;
+    text-align: left;
+}
+
+.value{
+    font-family: "Rubik";
+    font-weight: bold;
+    font-size: 25px;
+    color: #4F5665;
+}
+
+.text{
+    font-family: "Rubik";
+    font-size: 20px;
+    color: #4F5665;
+}
+
+.field{
+    border-right: #EEEFF2 solid;
+    border-left: #EEEFF2 solid;  
+    border-width: 2px;
+}
+
+.list{
+    list-style-type: none;
+    text-align: left;
+    margin-left: 169.48px;
+    margin-top: 23px;
+}
+.listItem{
+    margin-top: 21px;
+}
+
+.illustration2{
+    width: 508.12px;
+    height: 414.71px;
+    margin-left: 184.52px;
+    margin-top: 53.81px;
+}
+
+.bigText2{
+    width: 383.41px;
+    height: 100px;
+    margin-left: 169.48px;
+    margin-top: 107.98px;
+
+    text-align: left;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 50px;
+
+    color: #0B132A;
+}
+
+.smallText2{
+    width: 427.88px;
+    height: 60px;
+    margin-left: 169.48px;
+    margin-top: 20px;
+
+    text-align: left;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    
+    color: #4F5665;
+}
+
+.bigText3{
+    width: 383.41px;
+    height: 50px;
+    margin-left: 528.3px;
+    margin-top: 211.46px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 50px;
+
+    text-align: center;
+
+    color: #0B132A;
+}
+
+.smallText3{
+    width: 555px;
+    height: 60px;
+    margin-left: 442.5px;
+    margin-top: 20px;
+    
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    
+    text-align: center;
+    
+    color: #4F5665;
+}
+
+.planIcon{
+    width: 144.9px;
+    height: 165.37px;
+    margin-left: 92.55px;
+    margin-right: 92.55px;
+    margin-top: 79.63px;
+}
+
+.cardHeader1{
+    width: 82px;
+    height: 30px;
+    margin-left: 124px;
+    margin-top: 30px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+
+    text-align: center;
+
+    color: #0B132A;
+}
+
+.cardHeader2{
+    width: 123px;
+    height: 30px;
+    margin-left: 103px;
+    margin-top: 30px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+
+    text-align: center;
+
+    color: #0B132A;
+}
+
+.cardHeader3{
+    width: 121px;
+    height: 30px;
+    margin-left: 104.5px;
+    margin-top: 30px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+
+    text-align: center;
+
+    color: #0B132A;
+}
+
+.cardList{
+    list-style-type: none;
+    text-align: left;
+    margin-left: 69.96px;
+    margin-top: 33px;
+}
+
+.cardText1{
+    width: 54px;
+    height: 30px;
+    margin-left: 138px;
+    margin-right: 138px;
+    margin-top: 117px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+
+    text-align: center;
+
+    color: #0B132A;
+}
+
+.cardText2{
+    width: 92px;
+    height: 30px;
+    margin-left: 119px;
+    margin-right: 119px;
+    margin-top: 77px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    text-align: center;
+
+    color: #4F5665;
+}
+
+.cardText3{
+    width: 104px;
+    height: 30px;
+    margin-left: 113px;
+    margin-right: 113px;
+    margin-top: 37px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    text-align: center;
+
+    color: #4F5665;
+}
+
+.cardButton{
+    width: 177.88px;
+    height: 45px;
+    margin-left: 76.06px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    border: solid;
+    border-radius: 50px;
+    border-width: 2px;
+    border-color: #F53838;
+
+    background-color: white;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+
+    color:#F53838;
+}
+
+.cardButton:hover{
+    background-color: #F53838;
+    color: white;
+}
+
+.card{
+    border: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #DDDDDD;
+}
+
+.card:hover{
+    border-color: #F53838;
+}
+
+.cardListItem{
+    margin-bottom: 13px;
+}
+
+.bigText4{
+    width: 383.41px;
+    height: 100px;
+    margin-left: 527.43px;
+    margin-right: 529.32px;
+    margin-top: 150px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 50px;
+
+    text-align: center;
+
+    color: #0B132A;
+}
+
+.smallText4{
+    width: 555px;
+    height: 60px;
+    margin-left: 441.64px;
+    margin-right: 443.52px;
+    margin-top: 20px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+
+    text-align: center;
+
+    color: #4F5665;
+}
+
+.global{
+    width: 1060px;
+    height: 537.77px;
+    margin-left: 190px;
+    margin-top: 155.81px;
+}
+
+.sponsored{
+    width: 1135.64px;
+    height: 208.32px;
+    margin-left: 145px;
+    margin-top: 6.45px;
+}
+
+.bigText5 {
+    width: 447.81px;
+    height: 100px;
+    margin-left: 496.1px;
+    margin-right: 496.1px;
+    margin-top: 50px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 50px;
+
+    text-align: center;
+
+    color: #0B132A;
+}
+
+.smallText5 {
+    width: 555px;
+    height: 60px;
+    margin-left: 442.5px;
+    margin-right: 442.5px;
+    margin-top: 20px;
+    
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    
+    text-align: center;
+    
+    color: #4F5665;
+    
+}
+
+.customerCard {
+    width: 400px;
+    height: 230px;
+    margin-left: 150px;
+    margin-top: 60px;
+
+    background-color: #FFFFFF;
+
+    border: 2px solid #F53838;
+    border-radius: 10px;
+}
+
+.customerCardHeader {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+.customerCardBody{
+    width: 340px;
+    height: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    text-align: left;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+
+    color: #0B132A;
+}
+
+.name{
+    margin-left: 20px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+
+    text-align: center;
+
+    color: #0B132A;
+}
+
+.location{
+    margin-left: 21px;
+    margin-top: -8.75px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+
+    text-align: left;
+
+    color: #4F5665;
+}
+
+.star{
+    margin-top: 8.15px;
+}
+
+.rating{
+    width: 24px;
+    height: 16px;
+    margin-right: 10px;
+    margin-top: 2.5px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    align-items: center;
+
+    color: #0B132A;
+}
+
+.sliderTools{
+
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 82.5px;
+}
+
+.prevButton{
+    width: 60px;
+    height: 60px;   
+    margin-top: -22.5px;
+
+    border: solid;
+    border-radius: 50px;
+    border-color: #F53838;
+    background-color: #FFFFFF;
+}
+
+.nextButton{
+    width: 60px;
+    height: 60px;   
+    margin-top: -22.5px;
+    margin-left: 20px;
+
+    border: solid;
+    border-radius: 50px;
+    border-color: #F53838;
+    background-color: #F53838;
+}
+
+.subscribe{
+    width: 1140px;
+    height: 233px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 65.02px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 58.5px;
+    padding-bottom: 58.5px;
+    
+    background-color: white;
+
+    border-radius: 10px;
+}
+
+.bigText6{
+    width: 350px;
+    height: 80px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 45px;
+
+    text-align: left;
+
+    color: #0B132A;
+}
+
+.smallText6{
+    width: 410px;
+    height: 16px;
+    margin-top: 20px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+
+    text-align: left;
+
+    color: #4F5665;
+}
+
+.subscribeButton{
+    width: 250px;
+    height: 60px;
+    margin-top: 18px;
+
+    border: solid;
+    border-radius: 10px;
+    border-color: #F53838;
+
+    background-color: #F53838;
+
+    -webkit-box-shadow: 0px 5px 15px 5px #F5383859; 
+    box-shadow: 0px 5px 15px 5px #F5383859;
+
+    font-family: "Rubik";
+    font-weight: 700;
+
+    color: white;
+}

@@ -1,0 +1,165 @@
+.logo {
+    width: 149px;
+    height: 36.23px;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+.about {
+    width: 46px;
+    height: 19px;
+    margin-left: 157px;
+    margin-top: 58.62px;
+
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #4F5665;
+}
+.about:link{
+    text-decoration: none;
+}
+.about:hover{
+    color:#4F5665;
+}
+
+.features {
+
+    width: 66px;
+    height: 19px;
+    margin-left: 40px;
+    margin-top: 58.62px;
+        
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;   
+        
+    color: #4F5665;
+}
+.features:link{
+    text-decoration: none;
+}
+.features:hover{
+    color:#4F5665;
+}
+
+.pricing {
+
+    width: 52px;
+    height: 19px;
+    margin-left: 40px;
+    margin-top: 58.62px;
+            
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;           
+            
+    color: #4F5665;
+}
+.pricing:link{
+    text-decoration: none;
+}
+.pricing:hover{
+    color:#4F5665;
+}
+
+.testimonials {
+
+    width: 93px;
+    height: 19px;
+    margin-left: 40px;
+    margin-top: 58.62px;
+    
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #4F5665;
+}
+.testimonials:link{
+    text-decoration: none;
+}
+.testimonials:hover{
+    color:#4F5665;
+}
+
+.help {
+
+    width: 34px;
+    height: 19px;
+    margin-left: 40px;
+    margin-top: 58.62px;
+            
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;           
+            
+    color: #4F5665;
+}
+.help:link{
+    text-decoration: none;
+}
+.help:hover{
+    color:#4F5665;
+}
+
+.signIn{
+
+    width: 53px;
+    height: 19px;
+    margin-left: 150px;
+    margin-top: 58.62px;
+            
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;           
+            
+    color: #4F5665;
+}
+.signIn:link{
+    text-decoration: none;
+}
+.signIn:hover{
+    color:#4F5665;
+}
+
+.signUpButton {
+
+    width: 150px;
+    height: 45px;
+    margin-left: 30px;
+    margin-right: 150px;
+    margin-top: 45.62px;
+    
+    border: solid;
+    border-radius: 50px;
+    border-width: 1px;
+    border-color:#F53855;
+
+    background-color: white;
+            
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;           
+            
+    color: #F53855;
+}
+
+.signUpButton:hover{
+    background-color: #F53855;
+    color:white;
+}
