@@ -1,0 +1,54 @@
+@import "@fontsource/rubik";
+
+.button1 {
+  width: 150px;
+  height: 45;
+
+  border-radius: 50px;
+  border: solid;
+  border-width: 1px;
+  border-color: $buttonPrimaryColor;
+
+  background-color: white;
+
+  color: $buttonPrimaryColor;
+
+  font-family: $fontFamily;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.button2 {
+  width: 250px;
+  height: 60px;
+
+  border-radius: 10px;
+  border: solid;
+  border-color: $buttonPrimaryColor;
+
+  -webkit-box-shadow: 0px 30px 15px -10px rgba(245, 56, 56, 0.35);
+  box-shadow: 0px 30px 15px -10px rgba(245, 56, 56, 0.35);
+
+  background-color: $buttonPrimaryColor;
+
+  color: white;
+
+  font-family: $fontFamily;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.smallText {
+  font-family: $fontFamily;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  color: $textSecondaryColor;
+}
+
+.span {
+  font-weight: 600;
+}

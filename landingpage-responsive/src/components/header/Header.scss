@@ -1,0 +1,15 @@
+@import "../global/Variables.scss";
+@import "../global/Components.scss";
+
+.button1 {
+  border-color: $buttonSecondaryColor;
+  color: $buttonSecondaryColor;
+  font-weight: 500;
+}
+
+.navbar-nav {
+  font-family: $fontFamily;
+  font-style: normal;
+}
+
+.nav{width: 1320px;}

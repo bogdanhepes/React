@@ -1,0 +1,51 @@
+@import "../global/Variables.scss";
+@import "../global/Components.scss";
+
+@media (max-width: 991px) {
+  .img-fluid {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 991px) {
+  .container {
+    padding-top: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    width: 500px;
+  }
+  .smallText {
+    width: 530px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .smallText {
+    width: 530px;
+  }
+}
+
+.title {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 50px;
+
+  color: $textPrimaryColor;
+}
+
+.colLeft {
+  padding-top: 30px;
+  text-align: left;
+}
+
+.colRight {
+  text-align: right;
+}
+
+.titleSpan{font-weight: 700;}
+
+.button2{margin-top: 50px;}
+
