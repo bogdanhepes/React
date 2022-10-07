@@ -19,6 +19,14 @@
   font-weight: 700;
 }
 
+.button1:hover {
+  background-color: $buttonPrimaryColor;
+  color: white;
+
+  -webkit-box-shadow: 0px 20px 15px -10px rgba(245, 56, 56, 0.35);
+  box-shadow: 0px 20px 15px -10px rgba(245, 56, 56, 0.35);
+}
+
 .button2 {
   width: 250px;
   height: 60px;
@@ -45,6 +53,26 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+
+  color: $textSecondaryColor;
+}
+
+.bigText {
+  font-family: $fontFamily;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+
+  color: $textPrimaryColor;
+}
+
+.listText {
+  font-family: $fontFamily;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+
+  padding-left: 10px;
 
   color: $textSecondaryColor;
 }

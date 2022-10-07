@@ -1,5 +1,5 @@
-@import "../../global/Variables.scss";
-@import "../../global/Components.scss";
+@import "../../../global/Variables.scss";
+@import "../../../global/Components.scss";
 
 @media (min-width: 768px) {
   .col1 {
@@ -10,20 +10,18 @@
   }
 }
 
-
-
 .colWithBorder {
   border-right: solid;
   border-color: #eeeff2;
   border-width: 2px;
 }
 
-.container1 {
+.specsContainer {
   background-color: white;
-  width: 1140px;
+  max-width: 1140px;
 
   margin-top: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 
   padding-top: 67px;
   padding-bottom: 67px;

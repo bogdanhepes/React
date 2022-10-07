@@ -4,9 +4,9 @@ import "./Header.scss";
 const Header = () => {
   return (
     <>
-      <div className="container-xxl my-4 d-flex justify-content-center">
+      <div className="headerContainer container-xxl my-4 d-flex justify-content-center">
         <nav className="nav navbar navbar-expand-lg ">
-          <div className="container-fluid d-flex justify-content-between">
+          <div className="mainContainer container-fluid d-flex justify-content-between">
             <svg
               width="149"
               height="37"

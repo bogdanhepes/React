@@ -1,6 +1,12 @@
 @import "../global/Variables.scss";
 @import "../global/Components.scss";
 
+@media (min-width: 991px) {
+  .nav-link {
+    margin-right: 30px;
+  }
+}
+
 .button1 {
   border-color: $buttonSecondaryColor;
   color: $buttonSecondaryColor;
@@ -12,4 +18,6 @@
   font-style: normal;
 }
 
-.nav{width: 1320px;}
+.nav {
+  width: 1320px;
+}

@@ -1,0 +1,34 @@
+@import "../../../global/Variables.scss";
+@import "../../../global/Components.scss";
+
+@media (min-width: 508px) {
+  .plansContainer {
+    .col1,
+    .col2 {
+      align-items: center;
+      .smallText {
+        width: 550px;
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+        width: 380px;
+      }
+    }
+  }
+}
+
+.plansContainer {
+  padding-top: 80px;
+  background: linear-gradient(
+    180deg,
+    #f8f8f8 -45.04%,
+    rgba(248, 248, 248, 0) 88.56%
+  );
+  .col1 {
+    margin-bottom: 80px;
+  }
+  .col2 {
+    margin-top: 80px;
+  }
+}

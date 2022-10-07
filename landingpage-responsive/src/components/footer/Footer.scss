@@ -1,0 +1,84 @@
+@import "../global/Variables.scss";
+@import "../global/Components.scss";
+
+@media (min-width: 764px) {
+  .footerContainer {
+    .colLeft {
+      padding-left: 150px;
+    }
+    .colRight {
+      padding-right: 150px;
+    }
+  }
+}
+
+@media (max-width: 764px) {
+  .footerContainer {
+    .colLeft {
+      margin-left: 20px;
+      align-items: left;
+      .smallText {
+        width: 300px;
+      }
+    }
+    .colIcon {
+      display: flex;
+    }
+    .colRight {
+      margin: auto;
+    }
+  }
+}
+
+.footerContainer {
+  background: #f8f8f8;
+  padding-top: 160px;
+  padding-bottom: 100px;
+
+  .smallText {
+    padding-top: 20px;
+    max-width: 340px;
+  }
+  .colLeft {
+    text-align: left;
+  }
+  .colIcon {
+    margin-left: -17px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.copyright {
+  font-family: $fontFamily;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #afb5c0;
+}
+
+.footerList {
+  text-align: left;
+  list-style: none;
+}
+
+.listTitle {
+  padding-bottom: 20px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+
+  color: $textPrimaryColor;
+}
+
+.listItem {
+  cursor: pointer;
+  padding-top: 10px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  color: $textSecondaryColor;
+}

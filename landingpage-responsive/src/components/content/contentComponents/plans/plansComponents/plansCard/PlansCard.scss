@@ -1,0 +1,60 @@
+@import "../../../../../global/Variables.scss";
+@import "../../../../../global/Components.scss";
+
+.colList {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.planPrice {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+
+  color: $textSecondaryColor;
+}
+
+.planName {
+  padding-top: 30px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+
+  color: $textPrimaryColor;
+}
+
+.plansCardList {
+  list-style: none;
+  padding-top: 30px;
+  padding-left: 0px;
+  .li {
+    .p {
+      text-align: left;
+    }
+  }
+}
+.plansCardContainer {
+  .button1 {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .span {
+    color: $textPrimaryColor;
+  }
+  .colImg {
+    padding-top: 80px;
+  }
+}
+
+.planCard {
+  border: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: #dddddd;
+}
+
+.planCard:hover {
+  border-color: $buttonPrimaryColor;
+}
