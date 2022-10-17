@@ -1,9 +1,16 @@
-@import "../../../global/Variables.scss";
-@import "../../../global/Components.scss";
+@import "../../global/Variables.scss";
+@import "../../global/Components.scss";
 
 @media (min-width: 812px) {
   .subscribeContainer {
-    .colText {
+    .button2 {
+      margin-left: 70px;
+      margin-right: 70px;
+    }
+    .bigText {
+      padding-left: 70px;
+    }
+    .smallText {
       padding-left: 70px;
     }
   }
@@ -15,17 +22,13 @@
   margin-top: 100px;
   margin-bottom: -100px;
   max-width: 1140px;
-  align-items: left;
   -webkit-box-shadow: 0px -5px 50px 5px rgba(0, 0, 0, 0.05);
   box-shadow: 0px -5px 50px 5px rgba(0, 0, 0, 0.05);
   .bigText {
     text-align: left;
-    max-width: 350px;
+    max-width: 400px;
   }
   .smallText {
     text-align: left;
-  }
-  .button2 {
-    margin-right: 70px;
   }
 }

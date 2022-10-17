@@ -14,9 +14,8 @@
   color: $buttonPrimaryColor;
 
   font-family: $fontFamily;
-  font-style: normal;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: $fontWeightBold;
 }
 
 .button1:hover {
@@ -43,15 +42,13 @@
   color: white;
 
   font-family: $fontFamily;
-  font-style: normal;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: $fontWeightBold;
 }
 
 .smallText {
   font-family: $fontFamily;
-  font-style: normal;
-  font-weight: 400;
+  font-weight: $fontWeightNormal;
   font-size: 16px;
 
   color: $textSecondaryColor;
@@ -59,8 +56,7 @@
 
 .bigText {
   font-family: $fontFamily;
-  font-style: normal;
-  font-weight: 500;
+  font-weight: $fontWeightBold;
   font-size: 35px;
 
   color: $textPrimaryColor;
@@ -68,8 +64,7 @@
 
 .listText {
   font-family: $fontFamily;
-  font-style: normal;
-  font-weight: 400;
+  font-weight: $fontWeightNormal;
   font-size: 14px;
 
   padding-left: 10px;
@@ -77,6 +72,22 @@
   color: $textSecondaryColor;
 }
 
+.listTitle {
+  font-family: $fontFamily;
+  font-weight: $fontWeightBold;
+  font-size: 18px;
+
+  color: $textPrimaryColor;
+}
+
 .span {
-  font-weight: 600;
+  font-weight: $fontWeightBold;
+}
+
+.copyright {
+  font-family: $fontFamily;
+  font-weight: $fontWeightNormal;
+  font-size: 16px;
+
+  color: #afb5c0;
 }
