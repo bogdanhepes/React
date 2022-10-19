@@ -4,12 +4,17 @@
 @media (min-width: 991px) {
   .badgeContainer {
     padding-top: 60px;
+    .title {
+      padding-left: 60px;
+    }
+    .smallText {
+      padding-left: 60px;
+    }
   }
 }
 .badgeContainer {
   .title {
     padding-top: 30px;
-    padding-left: 60px;
     max-width: 600px;
 
     font-family: $fontFamily;
@@ -19,12 +24,12 @@
     color: $textPrimaryColor;
   }
   .smallText {
-    padding-left: 60px;
     padding-top: 30px;
     max-width: 600px;
   }
-  .button2{
+  .button2 {
     margin-left: 60px;
     margin-top: 40px;
+    margin-bottom: 30px;
   }
 }
