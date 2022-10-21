@@ -1,6 +1,12 @@
 @import "../global/Variables.scss";
 @import "../global/Components.scss";
 
+@media (max-width: 991px) {
+  .nav-link {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media (min-width: 991px) {
   .nav-link {
     margin-left: 15px;
@@ -18,4 +24,5 @@
   .navbar-nav {
     font-family: $fontFamily;
   }
+
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import "./PlansCard.scss";
 import Free from "../../../../photos/Free.png";
+import Standard from "../../../../photos/Standard.png";
+import Premium from "../../../../photos/Premium.png";
 import { CheckEmpty } from "../../../../global/SvgComponents";
 const PlansCard = () => {
   return (
@@ -8,8 +10,8 @@ const PlansCard = () => {
       <div className="cardContainer flex-wrap d-flex justify-content-evenly">
         <div className="planCard card">
           <div className="container">
-            <div className="row flex-column text-center">
-              <div className="col">
+            <div className="row flex-column text-center d-flex justify-content-end">
+              <div className="col py-5">
                 <img className="img-fluid" src={Free} alt="" />
                 <p className="planName">Free Plan</p>
               </div>
@@ -53,9 +55,9 @@ const PlansCard = () => {
         <div className="planCard card">
           <div className="container">
             <div className="row flex-column text-center">
-              <div className="col">
-                <img className="img-fluid" src={Free} alt="" />
-                <p className="planName">Free Plan</p>
+              <div className="col py-5">
+                <img className="img-fluid" src={Standard} alt="" />
+                <p className="planName">Standard Plan</p>
               </div>
               <div className="col">
                 <ul className="plansCardList ">
@@ -74,7 +76,7 @@ const PlansCard = () => {
                   <li className="d-flex">
                     <CheckEmpty />
                     <p className="listText d-flex justify-content-start">
-                      No Traffic Logs
+                      Yes Traffic Logs
                     </p>
                   </li>
                   <li className="d-flex">
@@ -83,11 +85,18 @@ const PlansCard = () => {
                       Works on All Devices
                     </p>
                   </li>
+                  <li className="d-flex">
+                    <CheckEmpty />
+                    <p className="listText d-flex justify-content-start">
+                      Connect Anywhere
+                    </p>
+                  </li>
                 </ul>
               </div>
               <div className="col">
                 <p className="planPrice">
-                  <span className="span">Free</span>
+                  <span className="span">$9 </span>
+                  / mo
                 </p>
                 <button className="button1">Select</button>
               </div>
@@ -97,12 +106,12 @@ const PlansCard = () => {
         <div className="planCard card">
           <div className="container">
             <div className="row flex-column text-center">
-              <div className="col">
-                <img className="img-fluid" src={Free} alt="" />
-                <p className="planName">Free Plan</p>
+              <div className="col py-5">
+                <img className="img-fluid" src={Premium} alt="" />
+                <p className="planName">Premium Plan</p>
               </div>
               <div className="col">
-                <ul className="plansCardList ">
+                <ul className="plansCardList p-0">
                   <li className="d-flex">
                     <CheckEmpty />
                     <p className="listText d-flex justify-content-start">
@@ -127,11 +136,23 @@ const PlansCard = () => {
                       Works on All Devices
                     </p>
                   </li>
+                  <li className="d-flex">
+                    <CheckEmpty />
+                    <p className="listText d-flex justify-content-start">
+                      Connect Anywhere
+                    </p>
+                  </li>
+                  <li className="d-flex">
+                    <CheckEmpty />
+                    <p className="listText d-flex justify-content-start">
+                      Get New Features
+                    </p>
+                  </li>
                 </ul>
               </div>
               <div className="col">
                 <p className="planPrice">
-                  <span className="span">Free</span>
+                  <span className="span">$12 </span>/ mo
                 </p>
                 <button className="button1">Select</button>
               </div>
