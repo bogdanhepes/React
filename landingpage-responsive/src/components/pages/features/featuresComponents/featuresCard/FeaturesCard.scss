@@ -1,0 +1,19 @@
+.featuresCardContainer {
+  .card-header {
+    background-color: white;
+    max-height: 200px;
+    .img-fluid {
+      max-height: 180px;
+    }
+  }
+  .card-footer {
+    background-color: white;
+  }
+  .cart {
+    cursor: pointer;
+  }
+  .description {
+    overflow: scroll;
+    max-height: 300px;
+  }
+}

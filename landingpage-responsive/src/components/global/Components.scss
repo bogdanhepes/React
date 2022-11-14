@@ -2,7 +2,8 @@
 
 .button1 {
   width: 150px;
-  height: 45;
+  padding-top: 13px;
+  padding-bottom: 13px;
 
   border-radius: 50px;
   border: solid;
@@ -76,6 +77,8 @@
   font-family: $fontFamily;
   font-weight: $fontWeightBold;
   font-size: 18px;
+
+  padding-left: 10px;
 
   color: $textPrimaryColor;
 }

@@ -1,0 +1,20 @@
+form {
+  .error {
+    color: red;
+    border-color: red;
+  }
+  .inputRow {
+    span {
+      font-size: 10px;
+    }
+    input {
+      border: solid;
+      height: 40px;
+      border-radius: 6px;
+      padding-left: 10px;
+    }
+  }
+  strong{
+    font-size: 13px;
+  }
+}

@@ -4,6 +4,18 @@ import "./Footer.scss";
 import { Logo, Facebook, Twitter, Instagram } from "../global/SvgComponents.js";
 
 const Footer = () => {
+  const lists = {
+    product: [
+      "Download",
+      "Pricing",
+      "Locations",
+      "Server",
+      "Countries",
+      "Blog",
+    ],
+    engage: ["LaslesVpn ?","FAQ","Tutorials","About Us","Privacy Policy","Terms Of Service"],
+    earnMoney: ["Affiliate","Become Partner"],
+  };
   return (
     <>
       <div className="footerContainer">
@@ -25,30 +37,24 @@ const Footer = () => {
               <p className="copyright">©2020LaslesVPN</p>
             </div>
             <div className="col-lg-6 d-flex justify-content-between">
-                <div className="footerList p-0">
-                  <p className="listTitle">Product</p>
-                  <li className="listText">Download</li>
-                  <li className="listText">Pricing</li>
-                  <li className="listText">Locations</li>
-                  <li className="listText">Server</li>
-                  <li className="listText">Countries</li>
-                  <li className="listText">Blog</li>
-                </div>
-                <div className="footerList p-0">
-                  <p className="listTitle">Engage</p>
-                  <li className="listText">LaslesVPN ?</li>
-                  <li className="listText">FAQ</li>
-                  <li className="listText">Tutorials</li>
-                  <li className="listText">About Us</li>
-                  <li className="listText">Privacy Policy</li>
-                  <li className="listText">Terms of Service</li>
-                </div>
-                <div className="footerList p-0">
-                  <p className="listTitle">Earn Money</p>
-                  <li className="listText">Affiliate</li>
-                  <li className="listText">Become Partner</li>
-                </div>
-              
+              <div className="footerList p-0">
+                <p className="listTitle">Product</p>
+                {lists.product.map((el) => {
+                  return <li className="listText">{el}</li>;
+                })}
+              </div>
+              <div className="footerList p-0">
+                <p className="listTitle">Engage</p>
+                {lists.engage.map((el) => {
+                  return <li className="listText">{el}</li>;
+                })}
+              </div>
+              <div className="footerList p-0">
+                <p className="listTitle">Earn Money</p>
+                {lists.earnMoney.map((el) => {
+                  return <li className="listText">{el}</li>;
+                })}
+              </div>
             </div>
           </div>
         </div>

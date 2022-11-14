@@ -1,36 +1,30 @@
-import "./App.css";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
 
-import Header from "./components/header/Header";
-import Badge from "./components/content/badge/Badge";
-import Subscribe from "./components/content/subscribe/Subscribe";
-import Slider from "./components/content/slider/Slider";
-import Sponsors from "./components/content/sponsors/Sponsors";
-import Plans from "./components/content/plans/Plans";
-import Specs from "./components/content/specs/Specs";
-import Footer from "./components/footer/Footer";
-import Map from "./components/content/map/Map";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "./components/pages/home/Home";
+import About from "./components/pages/about/About";
+import Features from "./components/pages/features/Features";
+import Pricing from "./components/pages/pricing/Pricing";
+import Testimonials from "./components/pages/testimonials/Testimonials";
+import Help from "./components/pages/help/Help";
 
 function App() {
   return (
-    <div className="App">
-      <div className="container-fluid">
-        <Header />
-        <Badge />
-        <Specs />
-        <Plans />
-        <Map/>
-        <Sponsors />
-        <Slider />
-        <Subscribe />
-      </div>
-      <div className="container-fluid" style={{ backgroundColor: "#F8F8F8" }}>
-        <Footer />
-      </div>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home/>}/>
+          <Route path="/About" element={<About/>}/>
+          <Route path="/Features" element={<Features/>}/>
+          <Route path="/Pricing" element={<Pricing/>}/>
+          <Route path="/Testimonials" element={<Testimonials/>}/>
+          <Route path="/Help" element={<Help/>}/>
+        </Routes>
+      </Router>
+    </>
   );
 }
 

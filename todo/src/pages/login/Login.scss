@@ -1,0 +1,32 @@
+.container-fluid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.card {
+  max-width: 500px;
+  border-radius: 15px;
+  .card-header {
+    background-color: white;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border: none;
+  }
+  .card-footer {
+    background-color: white;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: none;
+  }
+  .card-body{
+    border-top: solid;
+    border-bottom: solid;
+  }
+  -webkit-box-shadow: 0px 0px 35px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 35px 15px rgba(0, 0, 0, 0.3);
+}

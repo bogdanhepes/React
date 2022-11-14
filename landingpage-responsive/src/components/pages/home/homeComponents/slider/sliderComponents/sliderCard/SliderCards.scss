@@ -1,0 +1,47 @@
+@import "../../../../../../global/Variables.scss";
+@import "../../../../../../global/Components.scss";
+
+@media (min-width: 450px) {
+  .sliderCard {
+    width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .sliderCard {
+    width: 330px;
+  }
+}
+
+.sliderCard {
+  height: 250px;
+  .rowMessage {
+    padding-top: 6px;
+    .smallText {
+      height: 100px;
+      text-align: left;
+      margin-bottom: 0px;
+    }
+  }
+  .img-fluid {
+    width: 50px;
+    height: 50px;
+  }
+  .listTitle {
+    text-align: left;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+  .listText {
+    text-align: left;
+    margin-top: 0px;
+  }
+  .smallText {
+    text-align: right;
+    color: $textPrimaryColor;
+  }
+}
+.sliderCard:hover {
+  border-color: $buttonPrimaryColor;
+}

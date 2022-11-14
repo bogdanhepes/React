@@ -1,0 +1,19 @@
+@import "../../../../global/Variables.scss";
+@import "../../../../global/Components.scss";
+
+@media (min-width: 508px) {
+  .mapContainer {
+    .col {
+      align-items: center;
+      .smallText {
+        width: 550px;
+      }
+      h2 {
+        width: 380px;
+      }
+    }
+  }
+}
+.mapContainer {
+  padding-top: 150px;
+}

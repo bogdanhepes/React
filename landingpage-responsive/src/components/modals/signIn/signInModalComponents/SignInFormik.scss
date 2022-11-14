@@ -1,0 +1,31 @@
+@import "../../../global/Variables.scss";
+@import "../../../global/Components.scss";
+
+
+.signInFormikContainer {
+  label {
+    font-size: 20px;
+    font-family: $fontFamily;
+  }
+
+  input {
+    color: $textPrimaryColor;
+    border: 2px solid ;
+    border-color: $textSecondaryColor;
+    border-radius: 4px;
+    padding: 7px;
+    padding-left: 10px;
+    font-size: 17px;
+    font-family: $fontFamily;
+  }
+
+  .input-error {
+    border-color: $buttonPrimaryColor;
+  }
+
+  .error {
+    color: $buttonPrimaryColor;
+    font-size: 15px;
+    margin-top: 5px;
+  }
+}
