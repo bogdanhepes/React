@@ -24,6 +24,8 @@ const renderField = ({
       type={type}
       placeholder={placeholder}
       className={error ? "w-100 mb-3 error" : "w-100 mb-3"}
+      min="1"
+      max="100"
     />
     <br></br>
   </div>
@@ -34,8 +36,19 @@ const RegisterFormFunc = ({ handleSubmit }) => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
+  //   const [successful, setSuccessful] = useState(false);
+  //   console.log(successful);
+  //   useEffect(() => {
+  //     if (successful) navigate("/");
+  //   }, [navigate]);
 
-  const submit = ({ name = "", email = "", password = "", age = 0 }) => {
+  const submit = ({
+    name = "",
+    email = "",
+    password = "",
+    confirmPassword = "",
+    age = "",
+  }) => {
     let error = {};
     let isError = false;
 
@@ -51,6 +64,14 @@ const RegisterFormFunc = ({ handleSubmit }) => {
       error.password = "Required";
       isError = true;
     }
+    if (confirmPassword === "") {
+      error.confirmPassword = "Required";
+      isError = true;
+    }
+    if (confirmPassword !== password) {
+      error.confirmPassword = "Passwords do not match";
+      isError = true;
+    }
     if (age === "") {
       error.age = "Required";
       isError = true;
@@ -59,8 +80,9 @@ const RegisterFormFunc = ({ handleSubmit }) => {
       throw new SubmissionError(error);
     } else {
       setLoading(true);
-      dispatch(register(name, email, password, parseInt(age)))
+      dispatch(register(name, email, password, age))
         .then(() => {
+          console.log("succes");
           navigate("/");
           window.location.reload();
         })
@@ -85,13 +107,20 @@ const RegisterFormFunc = ({ handleSubmit }) => {
           type="email"
           placeholder="Email address"
         />
-        <Field
-          name="password"
-          component={renderField}
-          type="password"
-          placeholder="Password"
-        />
-
+        <div className="d-flex justify-content-between">
+          <Field
+            name="password"
+            component={renderField}
+            type="password"
+            placeholder="Password"
+          />
+          <Field
+            name="confirmPassword"
+            component={renderField}
+            type="password"
+            placeholder="Confirm Password"
+          />
+        </div>
         <Field
           name="age"
           component={renderField}

@@ -14,7 +14,7 @@ const Login = () => {
     if (isLoggedIn) {
       navigate("/todolist");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
   return (
     <>
       <div className="container-fluid">

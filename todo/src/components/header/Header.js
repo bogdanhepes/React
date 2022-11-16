@@ -8,17 +8,16 @@ import { logout } from "../../actions/auth";
 import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   const { isLoggedIn } = useSelector((state) => state.auth);
-  
+
   useEffect(() => {
     if (!isLoggedIn) {
       navigate("/");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
 
   return (
     <>

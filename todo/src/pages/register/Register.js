@@ -12,9 +12,9 @@ const Register = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      //navigate("/todolist");
+      navigate("/todolist");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
   return (
     <>
       <div className="container-fluid">

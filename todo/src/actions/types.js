@@ -6,6 +6,3 @@ export const LOGOUT = "LOGOUT";
 
 export const SET_MESSAGE = "SET_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
-
-export const IS_LOADING = "IS_LOADING";
-export const IS_NOT_LOADING = "IS_NOT_LOADING";
