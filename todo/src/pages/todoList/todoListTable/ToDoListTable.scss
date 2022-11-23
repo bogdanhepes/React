@@ -12,16 +12,16 @@
   .column4 {
     text-align: center;
   }
-  .col1 {
+  .index {
     width: 100px;
     text-align: center;
   }
-  .status {
-    width: 250px;
+  .completed {
+    width: 200px;
     text-align: center;
   }
   .ACTIONS {
-    width: 100px;
+    width: 200px;
     text-align: center;
   }
   .expander {
@@ -29,5 +29,10 @@
   }
   input {
     width: 80px;
+  }
+  .col {
+    border: solid;
+    border-color: grey;
+    border-width: 0.5px;
   }
 }

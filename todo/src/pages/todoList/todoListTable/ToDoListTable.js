@@ -1,27 +1,20 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
+
 import "./ToDoListTable.scss";
+
 import { useTable, useExpanded, useSortBy, useFilters } from "react-table";
+
+import { useDispatch, useSelector } from "react-redux";
+import { getTasks, deleteTask, getTask } from "../../../actions/tasks";
+import EditTaskModal from "../editTask/EditTaskModal";
+
+import { toast } from "react-toastify";
+
 const ToDoListTable = () => {
-  const data = React.useMemo(
-    () => [
-      {
-        col1: "1",
-        col2: "bbbb",
-        status:"✅"
-      },
-      {
-        col1: "2",
-        col2: "aaaa",
-        status:"b"
-      },
-      {
-        col1: "3",
-        col2: "cccca",
-        status:"✅"
-      },
-    ],
-    []
-  );
+  const dispatch = useDispatch();
+  const { tasks } = useSelector((state) => state.tasks);
+  const [loading, setLoading] = useState(false);
+
   const DefaultColumnFilter = ({
     column: { filterValue, preFilteredRows, setFilter },
   }) => {
@@ -36,6 +29,14 @@ const ToDoListTable = () => {
       />
     );
   };
+
+  const defaultColumn = React.useMemo(
+    () => ({
+      Filter: DefaultColumnFilter,
+    }),
+    []
+  );
+
   function SelectColumnFilter({
     column: { filterValue, setFilter, preFilteredRows, id },
   }) {
@@ -58,19 +59,12 @@ const ToDoListTable = () => {
         <option value="">All</option>
         {options.map((option, i) => (
           <option key={i} value={option}>
-            {option}
+            {option ? "✅" : "❌"}
           </option>
         ))}
       </select>
     );
   }
-
-  const defaultColumn = React.useMemo(
-    () => ({
-      Filter: DefaultColumnFilter,
-    }),
-    []
-  );
 
   const filterTypes = React.useMemo(
     () => ({
@@ -101,28 +95,74 @@ const ToDoListTable = () => {
       },
       {
         Header: "INDEX",
-        accessor: "col1",
+        accessor: "index",
         Filter: () => null,
+        Cell: ({ row }) => <div className={row.index + 1}>{row.index + 1}</div>,
       },
       {
-        Header: "TODOS",
-        accessor: "col2",
+        Header: "TO DO LIST",
+        accessor: "description",
       },
       {
         Header: "STATUS",
-        accessor: "status",
+        accessor: "completed",
         Filter: SelectColumnFilter,
-        filter: "includes",
+        Cell: (cell) => (cell.value ? "✅" : "❌"),
       },
       {
         Header: "ACTIONS",
-        Cell: (cell) => (
-          <div>
-            <button className="btn btn-sm btn-danger">DELETE</button>
+        Cell: ({ row }) => (
+          <div className="text-center d-flex justify-content-center">
+            <button
+              className="btn btn-sm btn-info ms-2"
+              onClick={() => {
+                dispatch(getTask(tasks?.data[row.index]?._id))
+                  .then(() => {
+                    toast.success("Data loaded successfully!", {
+                      toastId: "successDataLoad",
+                    });
+                  })
+                  .catch(() => {
+                    toast.error("Failed to load data!", {
+                      toastId: "errorDataLoad",
+                    });
+                  });
+              }}
+              data-bs-toggle="modal"
+              data-bs-target="#EditTaskModal"
+            >
+              EDIT
+            </button>
+
+            <button
+              className="btn btn-sm btn-danger ms-2"
+              onClick={() => {
+                dispatch(deleteTask(tasks?.data[row.index]?._id))
+                  .then(() => {
+                    setLoading(true);
+                    dispatch(getTasks()).then(() => {
+                      setLoading(false);
+                      toast.success("Task deleted successfully!", {
+                        toastId: "successDelete",
+                      });
+                    });
+                  })
+                  .catch(() => {
+                    setLoading(false);
+                    toast.error("Failed to delete task!", {
+                      toastId: "errorDelete",
+                    });
+                  });
+              }}
+            >
+              DELETE
+            </button>
+            <EditTaskModal id={tasks?.data[row.index]?._id} />
           </div>
         ),
       },
     ],
+    // eslint-disable-next-line
     []
   );
 
@@ -134,7 +174,12 @@ const ToDoListTable = () => {
     prepareRow,
     visibleColumns,
   } = useTable(
-    { columns, data, defaultColumn, filterTypes },
+    {
+      columns,
+      data: tasks?.data || [],
+      defaultColumn,
+      filterTypes,
+    },
     useFilters,
     useSortBy,
     useExpanded
@@ -143,65 +188,98 @@ const ToDoListTable = () => {
   return (
     <>
       <div className="container p-5">
-        <div className="table-responsive">
-          <table
-            {...getTableProps()}
-            className="table table-dark table-striped table-bordered"
-          >
-            <thead>
-              {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map((column) => (
-                    <th
-                      {...column.getHeaderProps(column.getSortByToggleProps())}
-                      className={column.id}
-                    >
-                      {column.render("Header")}
-                      <span>
-                        {column.isSorted
-                          ? column.isSortedDesc
-                            ? " 🔽"
-                            : " 🔼"
-                          : ""}
-                      </span>
-                      {column.canFilter ? column.render("Filter") : null}
-                    </th>
-                  ))}
-                </tr>
-              ))}
-            </thead>
-            <tbody {...getTableBodyProps()} className="table-group-divider">
-              {rows.map((row) => {
-                prepareRow(row);
-                return (
-                  <Fragment {...row.getRowProps()}>
-                    <tr>
-                      {row.cells.map((cell, index) => {
-                        return (
-                          <td
-                            {...cell.getCellProps()}
-                            className={"column" + (index + 1)}
-                          >
-                            {cell.render("Cell")}
-                          </td>
-                        );
-                      })}
-                    </tr>
-                    {row.isExpanded ? (
+        {loading ? (
+          <div className="pulse"></div>
+        ) : (
+          <div className="table-responsive">
+            <table
+              {...getTableProps()}
+              className="table table-dark table-striped table-bordered"
+            >
+              <thead>
+                {headerGroups.map((group) => (
+                  <tr {...group.getHeaderGroupProps()}>
+                    {group.headers.map((column) => (
+                      <th
+                        {...column.getHeaderProps(
+                          column.getSortByToggleProps()
+                        )}
+                        className={column.id}
+                      >
+                        {column.render("Header")}
+                        <span>
+                          {column.isSorted
+                            ? column.isSortedDesc
+                              ? " 🔽"
+                              : " 🔼"
+                            : ""}
+                        </span>
+                        {column.canFilter ? column.render("Filter") : null}
+                      </th>
+                    ))}
+                  </tr>
+                ))}
+              </thead>
+              <tbody {...getTableBodyProps()} className="table-group-divider">
+                {rows.map((row) => {
+                  prepareRow(row);
+                  return (
+                    <Fragment {...row.getRowProps()}>
                       <tr>
-                        <td colSpan={visibleColumns.length}>
-                          <div>
-                            sdhasdas<br></br>dsadasdasda
-                          </div>
-                        </td>
+                        {row.cells.map((cell, index) => {
+                          return (
+                            <td
+                              {...cell.getCellProps()}
+                              className={"column" + (index + 1)}
+                            >
+                              {cell.render("Cell")}
+                            </td>
+                          );
+                        })}
                       </tr>
-                    ) : null}
-                  </Fragment>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+                      {row.isExpanded ? (
+                        <tr>
+                          <td colSpan={visibleColumns.length}>
+                            <div className="container-sm">
+                              <div className="row text-center d-flex justify-content-center">
+                                <div className="col col-2">ID:</div>
+                                <div className="col col-6">
+                                  {tasks?.data[row.index]?._id}
+                                </div>
+                              </div>
+                              <div className="row text-center d-flex justify-content-center">
+                                <div className="col col-2">OWNER:</div>
+                                <div className="col col-6">
+                                  {tasks?.data[row.index]?.owner}
+                                </div>
+                              </div>
+                              <div className="row text-center d-flex justify-content-center">
+                                <div className="col col-2">CREATED AT:</div>
+                                <div className="col col-6">
+                                  {new Date(
+                                    tasks?.data[row.index]?.createdAt
+                                  ).toString("YYYY-MM-dd")}
+                                </div>
+                              </div>
+                              <div className="row text-center d-flex justify-content-center">
+                                <div className="col col-2">UPDATED AT:</div>
+                                <div className="col col-6">
+                                  {new Date(
+                                    tasks?.data[row.index]?.updatedAt
+                                  ).toString("YYYY-MM-dd")}
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      ) : null}
+                    </Fragment>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </>
   );

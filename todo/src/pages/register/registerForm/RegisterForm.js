@@ -10,6 +10,8 @@ import { useDispatch } from "react-redux";
 import { register } from "../../../actions/auth";
 import { useState } from "react";
 
+import { toast } from "react-toastify";
+
 const renderField = ({
   type,
   input,
@@ -36,11 +38,6 @@ const RegisterFormFunc = ({ handleSubmit }) => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
-  //   const [successful, setSuccessful] = useState(false);
-  //   console.log(successful);
-  //   useEffect(() => {
-  //     if (successful) navigate("/");
-  //   }, [navigate]);
 
   const submit = ({
     name = "",
@@ -64,6 +61,10 @@ const RegisterFormFunc = ({ handleSubmit }) => {
       error.password = "Required";
       isError = true;
     }
+    if (password.length < 7) {
+      error.password = "Password too short";
+      isError = true;
+    }
     if (confirmPassword === "") {
       error.confirmPassword = "Required";
       isError = true;
@@ -82,12 +83,15 @@ const RegisterFormFunc = ({ handleSubmit }) => {
       setLoading(true);
       dispatch(register(name, email, password, age))
         .then(() => {
-          console.log("succes");
-          navigate("/");
-          window.location.reload();
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
         })
         .catch(() => {
           setLoading(false);
+          toast.error("Email address is linked to another account!", {
+            toastId: "errorRegister",
+          });
         });
     }
   };

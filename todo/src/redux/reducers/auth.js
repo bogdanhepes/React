@@ -6,7 +6,7 @@ import {
   LOGOUT,
 } from "./../../actions/types";
 
-const user = JSON.parse(localStorage.getItem("user"));
+const user = localStorage.getItem("user");
 
 const initialState = user
   ? { isLoggedIn: true, user }
@@ -21,28 +21,38 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isLoggedIn: false,
+        isLoggedOut: false,
+        isRegistered: true,
       };
     case REGISTER_FAIL:
       return {
         ...state,
         isLoggedIn: false,
+        isLoggedOut: false,
+        isRegistered: false,
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
         isLoggedIn: true,
+        isLoggedOut: false,
+        isRegistered: false,
         user: payload.user,
       };
     case LOGIN_FAIL:
       return {
         ...state,
         isLoggedIn: false,
+        isLoggedOut: false,
+        isRegistered: false,
         user: null,
       };
     case LOGOUT:
       return {
         ...state,
         isLoggedIn: false,
+        isLoggedOut: true,
+        isRegistered: false,
         user: null,
       };
     default:

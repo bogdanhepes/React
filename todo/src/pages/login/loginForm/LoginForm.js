@@ -10,6 +10,8 @@ import { useDispatch } from "react-redux";
 import { login } from "../../../actions/auth";
 import { useState } from "react";
 
+import { toast } from "react-toastify";
+
 const renderField = ({
   type,
   input,
@@ -53,11 +55,16 @@ const LoginFormFunc = ({ handleSubmit }) => {
       setLoading(true);
       dispatch(login(email, password))
         .then(() => {
-          navigate("/todolist");
-          window.location.reload();
+          toast.success("User logged in successfully!", {
+            toastId: "successLogin",
+          });
+          setTimeout(() => {
+            navigate("/todolist");
+          }, 3000);
         })
         .catch(() => {
           setLoading(false);
+          toast.error("Invalid credentials!", { toastId: "errorLogin" });
         });
     }
   };

@@ -7,6 +7,14 @@
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  .error {
+    color: red;
+    font-size: 13px;
+  }
+  .success {
+    color: green;
+    font-size: 13px;
+  }
 }
 .card {
   max-width: 500px;
@@ -23,7 +31,7 @@
     border-bottom-left-radius: 15px;
     border: none;
   }
-  .card-body{
+  .card-body {
     border-top: solid;
     border-bottom: solid;
   }
