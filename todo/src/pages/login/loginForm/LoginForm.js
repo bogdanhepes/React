@@ -21,13 +21,17 @@ const renderField = ({
   <div className="inputRow">
     {touched && error && <span className="error">{error}</span>}
     <br></br>
-    <input
-      {...input}
-      type={type}
-      placeholder={placeholder}
-      className={error ? "w-100 mb-3 error" : "w-100 mb-3"}
-    />
-    <br></br>
+    <div className="form-floating">
+      <input
+        {...input}
+        type={type}
+        placeholder={placeholder}
+        className={
+          error ? "w-100 form-control mb-3 error" : "w-100 form-control mb-3"
+        }
+      />
+      <label>{placeholder}</label>
+    </div>
   </div>
 );
 
@@ -58,9 +62,7 @@ const LoginFormFunc = ({ handleSubmit }) => {
           toast.success("User logged in successfully!", {
             toastId: "successLogin",
           });
-          setTimeout(() => {
-            navigate("/todolist");
-          }, 3000);
+          navigate("/todolist");
         })
         .catch(() => {
           setLoading(false);
@@ -71,7 +73,7 @@ const LoginFormFunc = ({ handleSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit(submit)}>
-      <div className="container ">
+      <div className="container px-0">
         <Field
           name="email"
           component={renderField}
@@ -87,7 +89,7 @@ const LoginFormFunc = ({ handleSubmit }) => {
         <div className="ps-1 py-1 d-flex align-items-center">
           <Field name="checkbox" component="input" type="checkbox" />
           <strong htmlFor="rememberUser" className="ps-2">
-            Remember me on this computer
+            Remember me
           </strong>
         </div>
         <button type="submit" className="btn btn-dark w-100 my-3 mt-3">

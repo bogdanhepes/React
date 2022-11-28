@@ -15,9 +15,7 @@ const Register = () => {
   useEffect(() => {
     if (isLoggedIn) {
       setLoading(true);
-      setTimeout(() => {
-        navigate("/todolist");
-      }, 3000);
+      navigate("/todolist");
     }
   }, [isLoggedIn, navigate]);
 
@@ -27,22 +25,16 @@ const Register = () => {
         {loading ? (
           <div className="pulse"></div>
         ) : (
-          <div className="card mx-auto">
-            <div className="card-header ">
-              <h2 className="align-items-center m-0 py-2">
-                <strong className="text-dark p-0">Create an account</strong>
-              </h2>
-            </div>
-            <div className="card-body px-0">
-              <RegisterForm />
-            </div>
-            <div className="card-footer ">
-              <div className="d-flex justify-content-between pt-2 pb-3">
-                <div>Already have an account?</div>
-                <Link to="/">
-                  <strong className="text-dark">LogIn here</strong>
-                </Link>
-              </div>
+          <div class="form-signup w-100 m-auto px-5 py-4">
+            <h2 className="align-items-center text-center m-0 py-2">
+              <strong className="text-dark p-0">Sign Up</strong>
+            </h2>
+            <RegisterForm />
+            <div className="d-flex justify-content-between pt-2 pb-3">
+              <div>Already have an account?</div>
+              <Link to="/">
+                <strong className="text-dark">LogIn here</strong>
+              </Link>
             </div>
           </div>
         )}

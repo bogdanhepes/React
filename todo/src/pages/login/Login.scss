@@ -7,34 +7,12 @@
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  .error {
-    color: red;
-    font-size: 13px;
-  }
-  .success {
-    color: green;
-    font-size: 13px;
-  }
 }
-.card {
+
+.form-signin {
   max-width: 500px;
+  height: 450px;
   border-radius: 15px;
-  .card-header {
-    background-color: white;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border: none;
-  }
-  .card-footer {
-    background-color: white;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border: none;
-  }
-  .card-body {
-    border-top: solid;
-    border-bottom: solid;
-  }
   -webkit-box-shadow: 0px 0px 35px 15px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 35px 15px rgba(0, 0, 0, 0.3);
 }

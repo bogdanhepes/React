@@ -1,25 +1,54 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./EditTaskModal.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTask, getTasks } from "../../../actions/tasks";
 import { toast } from "react-toastify";
 const EditTaskModal = () => {
+  const dispatch = useDispatch();
   const { task } = useSelector((state) => state.tasks);
+
   const [loading, setLoading] = useState(false);
   const [description, setDescription] = useState(task?.data.description);
   const [completed, setCompleted] = useState(task?.data.completed);
-  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setDescription(task?.data.description);
+    setCompleted(task?.data.completed);
+  }, [task]);
 
   const clearInputValue = () => {
     document.getElementById("editTextInput").value = "";
     document.getElementById("checkboxInput").checked = false;
   };
+
+  const handleEditTask=(id,edits)=>{
+    setLoading(true);
+    dispatch(
+      updateTask(id, edits)
+    )
+      .then(() => {
+        dispatch(getTasks()).then(() => {
+          setLoading(false);
+          clearInputValue();
+          toast.success("Task edited successfully!", {
+            toastId: "successEdit",
+          });
+        });
+      })
+      .catch(() => {
+        setLoading(false);
+        toast.error("Failed to edit task!", {
+          toastId: "errorEdit",
+        });
+      });
+  }
+
   return (
     <>
       <div
         className="modal fade"
         id="EditTaskModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-hidden="true"
       >
         <div className="modal-dialog">
@@ -87,30 +116,7 @@ const EditTaskModal = () => {
               <button
                 type="button"
                 className="btn btn-dark"
-                onClick={() => {
-                  setLoading(true);
-                  dispatch(
-                    updateTask(task?.data._id, { description, completed })
-                  )
-                    .then(() => {
-                      dispatch(getTasks()).then(() => {
-                        setLoading(false);
-                        clearInputValue();
-                        setTimeout(() => {
-                          window.location.reload();
-                        }, 3000);
-                        toast.success("Task edited successfully!", {
-                          toastId: "successEdit",
-                        });
-                      });
-                    })
-                    .catch(() => {
-                      setLoading(false);
-                      toast.error("Failed to edit task!", {
-                        toastId: "errorEdit",
-                      });
-                    });
-                }}
+                onClick={() => handleEditTask(task?.data._id,{ description, completed })}
               >
                 {loading ? (
                   <div

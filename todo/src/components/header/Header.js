@@ -30,6 +30,8 @@ const Header = () => {
 
   const { user } = useSelector((state) => state.user);
 
+  const handleLogout = () => dispatch(logout());
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -69,7 +71,7 @@ const Header = () => {
                     <div
                       className="dropdown-item"
                       type="submit"
-                      onClick={() => dispatch(logout())}
+                      onClick={() => handleLogout()}
                     >
                       LogOut
                     </div>

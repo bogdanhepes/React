@@ -21,15 +21,19 @@ const renderField = ({
   <div className="inputRow">
     {touched && error && <span className="error">{error}</span>}
     <br></br>
-    <input
-      {...input}
-      type={type}
-      placeholder={placeholder}
-      className={error ? "w-100 mb-3 error" : "w-100 mb-3"}
-      min="1"
-      max="100"
-    />
-    <br></br>
+    <div className="form-floating">
+      <input
+        {...input}
+        type={type}
+        placeholder={placeholder}
+        className={
+          error ? "w-100 form-control mb-3 error" : "w-100 form-control mb-3"
+        }
+        min="1"
+        max="100"
+      />
+      <label>{placeholder}</label>
+    </div>
   </div>
 );
 
@@ -83,9 +87,7 @@ const RegisterFormFunc = ({ handleSubmit }) => {
       setLoading(true);
       dispatch(register(name, email, password, age))
         .then(() => {
-          setTimeout(() => {
-            navigate("/");
-          }, 2000);
+          navigate("/");
         })
         .catch(() => {
           setLoading(false);

@@ -11,12 +11,32 @@ const AddTaskModal = () => {
     document.getElementById("textInput").value = "";
   };
 
+  const handleAddTask = (description) => {
+    setLoading(true);
+    dispatch(addTask(description))
+      .then(() => {
+        dispatch(getTasks()).then(() => {
+          setLoading(false);
+          clearTextInputValue();
+          toast.success("Task added successfully!", {
+            toastId: "successAdd",
+          });
+        });
+      })
+      .catch(() => {
+        setLoading(false);
+        toast.error("Failed to add task!", {
+          toastId: "errorAdd",
+        });
+      });
+  };
+
   return (
     <>
       <div
         className="modal fade"
         id="addTaskModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-hidden="true"
       >
         <div className="modal-dialog">
@@ -52,28 +72,7 @@ const AddTaskModal = () => {
               <button
                 type="button"
                 className="btn btn-dark"
-                onClick={() => {
-                  setLoading(true);
-                  dispatch(addTask(description))
-                    .then(() => {
-                      dispatch(getTasks()).then(() => {
-                        setLoading(false);
-                        clearTextInputValue();
-                        setTimeout(() => {
-                          window.location.reload();
-                        }, 3000);
-                        toast.success("Task added successfully!", {
-                          toastId: "successAdd",
-                        });
-                      });
-                    })
-                    .catch(() => {
-                      setLoading(false);
-                      toast.error("Failed to add task!", {
-                        toastId: "errorAdd",
-                      });
-                    });
-                }}
+                onClick={() => handleAddTask(description)}
               >
                 {loading ? (
                   <div
