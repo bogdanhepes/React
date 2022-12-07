@@ -5,7 +5,7 @@ import "./LoginForm.scss";
 import { useNavigate } from "react-router-dom";
 
 import { Field, reduxForm, SubmissionError } from "redux-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../../../actions/auth";
 import { useState } from "react";
@@ -41,6 +41,8 @@ const LoginFormFunc = ({ handleSubmit }) => {
 
   const [loading, setLoading] = useState(false);
 
+  const { message } = useSelector((state) => state.message);
+
   const submit = ({ email = "", password = "", checkbox = "" }) => {
     let error = {};
     let isError = false;
@@ -66,7 +68,11 @@ const LoginFormFunc = ({ handleSubmit }) => {
         })
         .catch(() => {
           setLoading(false);
-          toast.error("Invalid credentials!", { toastId: "errorLogin" });
+          message === "Network Error"
+            ? toast.error("Our server is under maintenance!", {
+                toastId: "networkError",
+              })
+            : toast.error("Invalid credentials!", { toastId: "errorLogin" });
         });
     }
   };

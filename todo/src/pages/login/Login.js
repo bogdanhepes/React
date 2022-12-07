@@ -39,7 +39,7 @@ const Login = () => {
         {loading ? (
           <div className="pulse"></div>
         ) : (
-          <div class="form-signin w-100 m-auto px-5 py-4">
+          <div className="form-signin w-100 m-auto px-5 py-4">
             <h2 className="align-items-center text-center m-0 py-2">
               <strong className="text-dark p-0">Log In Please</strong>
             </h2>
@@ -47,7 +47,7 @@ const Login = () => {
             <div className="d-flex justify-content-between pt-2 pb-3">
               <div>Don't have an account?</div>
               <Link to="/register">
-                <strong className="text-dark">Register here</strong>
+                <label className="text-dark">Register here</label>
               </Link>
             </div>
           </div>

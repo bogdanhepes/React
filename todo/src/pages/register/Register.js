@@ -33,7 +33,7 @@ const Register = () => {
             <div className="d-flex justify-content-between pt-2 pb-3">
               <div>Already have an account?</div>
               <Link to="/">
-                <strong className="text-dark">LogIn here</strong>
+                <label className="text-dark">LogIn here</label>
               </Link>
             </div>
           </div>

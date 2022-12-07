@@ -269,7 +269,7 @@ const ToDoListTable = () => {
                                 <div className="col col-6">
                                   {new Date(
                                     tasks?.data[row.index]?.createdAt
-                                  ).toString("YYYY-MM-dd")}
+                                  ).toLocaleString()}
                                 </div>
                               </div>
                               <div className="row text-center d-flex justify-content-center">
@@ -277,7 +277,7 @@ const ToDoListTable = () => {
                                 <div className="col col-6">
                                   {new Date(
                                     tasks?.data[row.index]?.updatedAt
-                                  ).toString("YYYY-MM-dd")}
+                                  ).toLocaleString()}
                                 </div>
                               </div>
                             </div>

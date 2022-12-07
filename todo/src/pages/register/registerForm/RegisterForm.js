@@ -5,7 +5,7 @@ import "./RegisterForm.scss";
 import { useNavigate } from "react-router-dom";
 
 import { Field, reduxForm, SubmissionError } from "redux-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { register } from "../../../actions/auth";
 import { useState } from "react";
@@ -42,6 +42,7 @@ const RegisterFormFunc = ({ handleSubmit }) => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
+  const { message } = useSelector((state) => state.message);
 
   const submit = ({
     name = "",
@@ -91,9 +92,13 @@ const RegisterFormFunc = ({ handleSubmit }) => {
         })
         .catch(() => {
           setLoading(false);
-          toast.error("Email address is linked to another account!", {
-            toastId: "errorRegister",
-          });
+          message === "Network Error"
+            ? toast.error("Our server is under maintenance!", {
+                toastId: "networkError",
+              })
+            : toast.error("Email address is linked to another account!", {
+                toastId: "errorRegister",
+              });
         });
     }
   };
