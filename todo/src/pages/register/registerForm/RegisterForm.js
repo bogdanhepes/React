@@ -5,7 +5,7 @@ import "./RegisterForm.scss";
 import { useNavigate } from "react-router-dom";
 
 import { Field, reduxForm, SubmissionError } from "redux-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { register } from "../../../actions/auth";
 import { useState } from "react";
@@ -21,15 +21,19 @@ const renderField = ({
   <div className="inputRow">
     {touched && error && <span className="error">{error}</span>}
     <br></br>
-    <input
-      {...input}
-      type={type}
-      placeholder={placeholder}
-      className={error ? "w-100 mb-3 error" : "w-100 mb-3"}
-      min="1"
-      max="100"
-    />
-    <br></br>
+    <div className="form-floating">
+      <input
+        {...input}
+        type={type}
+        placeholder={placeholder}
+        className={
+          error ? "w-100 form-control mb-3 error" : "w-100 form-control mb-3"
+        }
+        min="1"
+        max="100"
+      />
+      <label>{placeholder}</label>
+    </div>
   </div>
 );
 
@@ -38,6 +42,7 @@ const RegisterFormFunc = ({ handleSubmit }) => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
+  const { message } = useSelector((state) => state.message);
 
   const submit = ({
     name = "",
@@ -83,15 +88,17 @@ const RegisterFormFunc = ({ handleSubmit }) => {
       setLoading(true);
       dispatch(register(name, email, password, age))
         .then(() => {
-          setTimeout(() => {
-            navigate("/");
-          }, 2000);
+          navigate("/");
         })
         .catch(() => {
           setLoading(false);
-          toast.error("Email address is linked to another account!", {
-            toastId: "errorRegister",
-          });
+          message === "Network Error"
+            ? toast.error("Our server is under maintenance!", {
+                toastId: "networkError",
+              })
+            : toast.error("Email address is linked to another account!", {
+                toastId: "errorRegister",
+              });
         });
     }
   };

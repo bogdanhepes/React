@@ -19,9 +19,7 @@ const Login = () => {
   useEffect(() => {
     if (isLoggedIn) {
       setLoading(true);
-      setTimeout(() => {
-        navigate("/todolist");
-      }, 3000);
+      navigate("/todolist");
     }
   }, [isLoggedIn, navigate]);
 
@@ -41,22 +39,16 @@ const Login = () => {
         {loading ? (
           <div className="pulse"></div>
         ) : (
-          <div className="card mx-auto">
-            <div className="card-header ">
-              <h2 className="align-items-center m-0 py-2">
-                <strong className="text-dark p-0">Log In</strong>
-              </h2>
-            </div>
-            <div className="card-body px-0">
-              <LoginForm />
-            </div>
-            <div className="card-footer ">
-              <div className="d-flex justify-content-between pt-2 pb-3">
-                <div>Don't have an account?</div>
-                <Link to="/register">
-                  <strong className="text-dark">Register here</strong>
-                </Link>
-              </div>
+          <div className="form-signin w-100 m-auto px-5 py-4">
+            <h2 className="align-items-center text-center m-0 py-2">
+              <strong className="text-dark p-0">Log In Please</strong>
+            </h2>
+            <LoginForm />
+            <div className="d-flex justify-content-between pt-2 pb-3">
+              <div>Don't have an account?</div>
+              <Link to="/register">
+                <label className="text-dark">Register here</label>
+              </Link>
             </div>
           </div>
         )}

@@ -1,0 +1,44 @@
+.profileContainer {
+  .chart {
+    height: 180px;
+  }
+  ul {
+    //   border: solid;
+    li {
+      border-bottom: solid lightgrey 1px;
+      padding-bottom: 7px;
+      a {
+        text-decoration: none;
+        color: grey;
+      }
+    }
+  }
+  .profilePicture {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  .name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .bi-facebook {
+    color: rgb(20, 66, 175);
+  }
+  .bi-instagram {
+    color: rgb(255, 47, 0);
+  }
+  .bi-twitter {
+    color: rgb(0, 195, 255);
+  }
+  .bi-github {
+    color: black;
+  }
+  .bi-linkedin {
+    color: rgb(2, 43, 148);
+  }
+  .bi-person-circle {
+    font-size: 200px;
+  }
+}

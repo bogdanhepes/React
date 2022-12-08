@@ -59,7 +59,7 @@ const ToDoListTable = () => {
         <option value="">All</option>
         {options.map((option, i) => (
           <option key={i} value={option}>
-            {option ? "✅" : "❌"}
+            {option ? "completed" : "not completed"}
           </option>
         ))}
       </select>
@@ -82,6 +82,33 @@ const ToDoListTable = () => {
     []
   );
 
+  const handleGetTask = (id) => {
+    dispatch(getTask(id)).catch(() => {
+      toast.error("Failed to load task data!", {
+        toastId: "errorDataLoad",
+      });
+    });
+  };
+
+  const handleDelete = (id) => {
+    setLoading(true);
+    dispatch(deleteTask(id))
+      .then(() => {
+        dispatch(getTasks()).then(() => {
+          setLoading(false);
+          toast.success("Task deleted successfully!", {
+            toastId: "successDelete",
+          });
+        });
+      })
+      .catch(() => {
+        setLoading(false);
+        toast.error("Failed to delete task!", {
+          toastId: "errorDelete",
+        });
+      });
+  };
+
   const columns = React.useMemo(
     () => [
       {
@@ -89,7 +116,11 @@ const ToDoListTable = () => {
         Header: () => null,
         Cell: ({ row }) => (
           <span {...row.getToggleRowExpandedProps()}>
-            {row.isExpanded ? "⬇" : "➡️"}
+            {row.isExpanded ? (
+              <i className="bi bi-arrows-collapse"></i>
+            ) : (
+              <i className="bi bi-arrows-expand"></i>
+            )}
           </span>
         ),
       },
@@ -107,7 +138,12 @@ const ToDoListTable = () => {
         Header: "STATUS",
         accessor: "completed",
         Filter: SelectColumnFilter,
-        Cell: (cell) => (cell.value ? "✅" : "❌"),
+        Cell: (cell) =>
+          cell.value ? (
+            <i className="bi bi-check-lg"></i>
+          ) : (
+            <i className="bi bi-x-lg"></i>
+          ),
       },
       {
         Header: "ACTIONS",
@@ -115,19 +151,7 @@ const ToDoListTable = () => {
           <div className="text-center d-flex justify-content-center">
             <button
               className="btn btn-sm btn-info ms-2"
-              onClick={() => {
-                dispatch(getTask(tasks?.data[row.index]?._id))
-                  .then(() => {
-                    toast.success("Data loaded successfully!", {
-                      toastId: "successDataLoad",
-                    });
-                  })
-                  .catch(() => {
-                    toast.error("Failed to load data!", {
-                      toastId: "errorDataLoad",
-                    });
-                  });
-              }}
+              onClick={() => handleGetTask(row.original._id)}
               data-bs-toggle="modal"
               data-bs-target="#EditTaskModal"
             >
@@ -136,28 +160,11 @@ const ToDoListTable = () => {
 
             <button
               className="btn btn-sm btn-danger ms-2"
-              onClick={() => {
-                dispatch(deleteTask(tasks?.data[row.index]?._id))
-                  .then(() => {
-                    setLoading(true);
-                    dispatch(getTasks()).then(() => {
-                      setLoading(false);
-                      toast.success("Task deleted successfully!", {
-                        toastId: "successDelete",
-                      });
-                    });
-                  })
-                  .catch(() => {
-                    setLoading(false);
-                    toast.error("Failed to delete task!", {
-                      toastId: "errorDelete",
-                    });
-                  });
-              }}
+              onClick={() => handleDelete(row.original._id)}
             >
               DELETE
             </button>
-            <EditTaskModal id={tasks?.data[row.index]?._id} />
+            <EditTaskModal />
           </div>
         ),
       },
@@ -208,11 +215,15 @@ const ToDoListTable = () => {
                       >
                         {column.render("Header")}
                         <span>
-                          {column.isSorted
-                            ? column.isSortedDesc
-                              ? " 🔽"
-                              : " 🔼"
-                            : ""}
+                          {column.isSorted ? (
+                            column.isSortedDesc ? (
+                              <i className="bi bi-caret-down-fill"></i>
+                            ) : (
+                              <i className="bi bi-caret-up-fill"></i>
+                            )
+                          ) : (
+                            ""
+                          )}
                         </span>
                         {column.canFilter ? column.render("Filter") : null}
                       </th>
@@ -258,7 +269,7 @@ const ToDoListTable = () => {
                                 <div className="col col-6">
                                   {new Date(
                                     tasks?.data[row.index]?.createdAt
-                                  ).toString("YYYY-MM-dd")}
+                                  ).toLocaleString()}
                                 </div>
                               </div>
                               <div className="row text-center d-flex justify-content-center">
@@ -266,7 +277,7 @@ const ToDoListTable = () => {
                                 <div className="col col-6">
                                   {new Date(
                                     tasks?.data[row.index]?.updatedAt
-                                  ).toString("YYYY-MM-dd")}
+                                  ).toLocaleString()}
                                 </div>
                               </div>
                             </div>

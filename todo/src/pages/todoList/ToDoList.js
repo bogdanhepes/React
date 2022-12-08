@@ -15,9 +15,6 @@ const ToDoList = () => {
     dispatch(getTasks())
       .then(() => {
         setLoading(false);
-        toast.success("Data loaded successfully!", {
-          toastId: "successDataLoad",
-        });
       })
       .catch(() => {
         setLoading(false);
@@ -29,7 +26,7 @@ const ToDoList = () => {
     <>
       <Header />
       <AddTask />
-      {loading ? <div class="pulse"></div> : <ToDoListTable />}
+      {loading ? <div className="pulse"></div> : <ToDoListTable />}
     </>
   );
 };

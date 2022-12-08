@@ -1,8 +1,13 @@
-.userMessage {
-  color: white;
+.header {
+  .userMessage {
+    color: white;
+  }
+  a {
+    text-decoration: none;
+  }
+  .profilePicture {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+  }
 }
-
-a {
-  text-decoration: none;
-}
-
