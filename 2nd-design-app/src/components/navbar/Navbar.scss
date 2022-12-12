@@ -1,0 +1,41 @@
+@import "../../global/Components.scss";
+@import "../../global/Variables.scss";
+
+@media (max-width: $medium) {
+  .stores-lg {
+    display: none;
+  }
+  .stores-md {
+    display: none;
+  }
+}
+@media (min-width: $medium) and (max-width: $large) {
+  .stores-sm {
+    display: none;
+  }
+  .stores-lg {
+    display: none;
+  }
+}
+@media (min-width: $large) {
+  .stores-sm {
+    display: none;
+  }
+  .stores-md {
+    display: none;
+  }
+  .navbar {
+    padding-bottom: 91px;
+    .navbar-nav {
+      padding-left: 32px;
+    }
+  }
+}
+
+.navbar {
+  padding-top: 20px;
+  z-index: 1;
+  .nav-link {
+    color: black;
+  }
+}

@@ -1,0 +1,74 @@
+@import "./Variables.scss";
+.storeBadge {
+  width: 147px;
+  background-color: black;
+  border: solid #a6a6a6 2px;
+  border-radius: 6px;
+  color: white;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  cursor: pointer;
+  .smallBadgeText {
+    font-size: 8.5px;
+    line-height: 100%;
+    font-weight: bold;
+  }
+  .bigBadgeText {
+    font-size: 17px;
+    line-height: 120%;
+    font-weight: bold;
+  }
+}
+
+.filledBtn {
+  border-radius: 8px;
+  padding: 16px 24px;
+  background-color: $filledButtonColor;
+  color: white;
+  font-weight: $btnFontWeight;
+}
+.filledBtn:hover {
+  border: solid $filledButtonColor;
+  background-color: white;
+  color: $filledButtonColor;
+}
+
+.emptyBtn {
+  border-radius: 8px;
+  padding: 16px 24px;
+  color: $filledButtonColor;
+  font-weight: $btnFontWeight;
+}
+.emptyBtn:hover {
+  background-color: $filledButtonColor;
+  color: white;
+  svg {
+    path {
+      stroke: white;
+    }
+  }
+}
+
+.title {
+  font-size: $titleFontSize;
+  font-weight: $titleFontWeight;
+  color: $primaryTextColor;
+}
+.someText {
+  font-size: $textFontSize;
+  font-weight: $textFontWeight;
+  color: $secondaryTextColor;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .title {
+    font-size: $mdTitleFontSize;
+    color: $primaryTextColor;
+  }
+}
+@media (max-width: 767px) {
+  .title {
+    font-size: $smTitleFontSize;
+    color: $secondaryTextColor;
+  }
+}
