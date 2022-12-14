@@ -1,15 +1,20 @@
 import React from "react";
 import "./Navbar.scss";
 
-import { AppStoreLogo, GooglePlayLogo, Logo } from "../../global/Svgs";
+import {
+  AppStoreLogo,
+  GooglePlayLogo,
+  Logo,
+  MenuIcon,
+} from "../../global/Svgs";
 const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg pb-6">
         <div className="container">
-          <Logo></Logo>
+          <Logo/>
           <div className="stores-md ms-auto me-4">
-            <label className="storeBadge">
+            <label className="storeBadge me-2">
               <div className="d-flex justify-content-center">
                 <div className="col-2">
                   <GooglePlayLogo />
@@ -41,7 +46,7 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <MenuIcon />
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav d-flex align-items-center">
@@ -65,8 +70,8 @@ const Navbar = () => {
                   Help
                 </a>
               </li>
-              <li className="stores-sm mx-auto ">
-                <label className="storeBadge">
+              <li className="stores-sm mx-auto">
+                <label className="storeBadge me-2">
                   <div className="d-flex justify-content-center">
                     <div className="col-2">
                       <GooglePlayLogo />
@@ -92,7 +97,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="stores-lg">
-            <label className="storeBadge">
+            <label className="storeBadge me-2">
               <div className="d-flex justify-content-center">
                 <div className="col-2">
                   <GooglePlayLogo />

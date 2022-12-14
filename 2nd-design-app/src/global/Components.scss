@@ -54,21 +54,47 @@
   font-weight: $titleFontWeight;
   color: $primaryTextColor;
 }
+.sectionTitle {
+  font-size: $sectionTitleFontSize;
+  font-weight: $sectionTitleFontWeight;
+  color: $primaryTextColor;
+}
+.featureTitle {
+  font-size: $featureTitleFontSize;
+  font-weight: $featureTitleFontWeight;
+  color: $primaryTextColor;
+}
+
 .someText {
   font-size: $textFontSize;
   font-weight: $textFontWeight;
   color: $secondaryTextColor;
 }
+.featureText {
+  font-size: $featureTextFontSize;
+  font-weight: $featureTextFontWeight;
+  color: $secondaryTextColor;
+}
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: $medium) and (max-width: $large) {
   .title {
     font-size: $mdTitleFontSize;
-    color: $primaryTextColor;
+  }
+  .sectionTitle {
+    font-size: $smSectionTitleFontSize;
+  }
+  .featureTitle {
+    font-size: $smFeatureTitleFontSize;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: $medium) {
   .title {
     font-size: $smTitleFontSize;
-    color: $secondaryTextColor;
+  }
+  .sectionTitle {
+    font-size: $smSectionTitleFontSize;
+  }
+  .featureTitle {
+    font-size: $smFeatureTitleFontSize;
   }
 }

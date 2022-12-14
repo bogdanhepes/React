@@ -2,7 +2,8 @@
 @import "../../../global/Components.scss";
 
 .hero03Container {
-  max-width: 1440px;
+  // max-width: 1440px;
+  padding-bottom: 95px;
   background: $hero03BackgroundColor;
   .row {
     position: relative;
