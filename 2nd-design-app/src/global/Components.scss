@@ -1,4 +1,57 @@
 @import "./Variables.scss";
+
+@media (min-width: $medium) and (max-width: $large) {
+  .title {
+    font-size: $mdTitleFontSize;
+  }
+  .sectionTitle {
+    font-size: $smSectionTitleFontSize;
+  }
+  .featureTitle {
+    font-size: $smFeatureTitleFontSize;
+  }
+  .metricValue {
+    font-size: $mdMetricValueFontSize;
+  }
+  .metricType {
+    font-size: $smMetricTypeFontSize;
+  }
+}
+@media (max-width: $medium) {
+  .title {
+    font-size: $smTitleFontSize;
+  }
+  .sectionTitle {
+    font-size: $smSectionTitleFontSize;
+  }
+  .featureTitle {
+    font-size: $smFeatureTitleFontSize;
+  }
+  .metricValue {
+    font-size: $smMetricValueFontSize;
+  }
+  .metricType {
+    font-size: $smMetricTypeFontSize;
+  }
+}
+
+@media (min-width: $large) {
+  .title {
+    font-size: $titleFontSize;
+  }
+  .sectionTitle {
+    font-size: $sectionTitleFontSize;
+  }
+  .featureTitle {
+    font-size: $featureTitleFontSize;
+  }
+  .metricValue {
+    font-size: $metricValueFontSize;
+  }
+  .metricType {
+    font-size: $metricTypeFontSize;
+  }
+}
 .storeBadge {
   width: 147px;
   background-color: black;
@@ -50,18 +103,21 @@
 }
 
 .title {
-  font-size: $titleFontSize;
   font-weight: $titleFontWeight;
   color: $primaryTextColor;
 }
 .sectionTitle {
-  font-size: $sectionTitleFontSize;
   font-weight: $sectionTitleFontWeight;
   color: $primaryTextColor;
 }
 .featureTitle {
-  font-size: $featureTitleFontSize;
   font-weight: $featureTitleFontWeight;
+  color: $primaryTextColor;
+}
+
+.sectionSubtitle {
+  font-size: $sectionSubitleFontSize;
+  font-weight: $sectionSubtitleFontWeight;
   color: $primaryTextColor;
 }
 
@@ -76,25 +132,40 @@
   color: $secondaryTextColor;
 }
 
-@media (min-width: $medium) and (max-width: $large) {
-  .title {
-    font-size: $mdTitleFontSize;
-  }
-  .sectionTitle {
-    font-size: $smSectionTitleFontSize;
-  }
-  .featureTitle {
-    font-size: $smFeatureTitleFontSize;
-  }
+.message {
+  font-size: $messageFontSize;
+  font-weight: $messageFontWeight;
+  color: $primaryTextColor;
 }
-@media (max-width: $medium) {
-  .title {
-    font-size: $smTitleFontSize;
-  }
-  .sectionTitle {
-    font-size: $smSectionTitleFontSize;
-  }
-  .featureTitle {
-    font-size: $smFeatureTitleFontSize;
-  }
+.author {
+  font-size: $authorFontSize;
+  font-weight: $authorFontWeight;
+  color: $primaryTextColor;
+}
+.authorJob {
+  font-size: $authorJobFontSize;
+  font-weight: $authorJobFontWeight;
+  color: $authorJobTextColor;
+}
+
+.metricValue {
+  font-weight: $metricValueFontWeight;
+  color: $primaryTextColor;
+}
+
+.metricType {
+  font-weight: $metricTypeFontWeight;
+  color: $primaryTextColor;
+}
+
+.getTheApp {
+  font-size: $getTheAppFontSize;
+  font-weight: $getTheAppFontWeight;
+  color: $primaryTextColor;
+}
+
+.credits {
+  font-size: $creditsFontSize;
+  font-weight: $creditsFontWeight;
+  color: $creditsTextColor;
 }

@@ -4,7 +4,7 @@ import "./Navbar.scss";
 import {
   AppStoreLogo,
   GooglePlayLogo,
-  Logo,
+  LogoAndName,
   MenuIcon,
 } from "../../global/Svgs";
 const Navbar = () => {
@@ -12,9 +12,9 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg pb-6">
         <div className="container">
-          <Logo/>
+          <LogoAndName/>
           <div className="stores-md ms-auto me-4">
-            <label className="storeBadge me-2">
+            <label className="storeBadge me-3">
               <div className="d-flex justify-content-center">
                 <div className="col-2">
                   <GooglePlayLogo />
@@ -71,7 +71,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="stores-sm mx-auto">
-                <label className="storeBadge me-2">
+                <label className="storeBadge me-3">
                   <div className="d-flex justify-content-center">
                     <div className="col-2">
                       <GooglePlayLogo />
@@ -97,9 +97,9 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="stores-lg">
-            <label className="storeBadge me-2">
+            <label className="storeBadge me-3">
               <div className="d-flex justify-content-center">
-                <div className="col-2">
+                <div className="col-1.5">
                   <GooglePlayLogo />
                 </div>
                 <div className="col-8.5 ps-2 d-flex flex-column">

@@ -14,7 +14,7 @@ const Features = () => {
       <div className="featuresContainer">
         <div className="container text-center">
           <h2 className="sectionTitle mx-auto">Tailor-made features</h2>
-          <div className="someText mx-auto">
+          <div className="sectionSubtitle mx-auto">
             Lorem ipsum is common placeholder text used to demonstrate the
             graphic elements of a document or visual presentation.
           </div>

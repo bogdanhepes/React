@@ -1,9 +1,16 @@
 $bgDesktop: url(./photos/BackgroundDesktop.png);
 $phoneFrame: url(./photos/iPhoneX.png);
+$CTAPhoneFrameLeft: url(./photos/CTAiPhoneXLeft.png);
+$CTAPhoneFrameRight: url(./photos/CTAiPhoneXRight.png);
 
 $small: 576px;
 $medium: 768px;
 $large: 992px;
+$xlarge: 1200px;
+$xxlarge: 1400px;
+
+$testimonialSectionColor: #d5fafc;
+$CTASectionColor: #1db5be;
 
 $filledButtonColor: #7c3aed;
 
@@ -19,12 +26,15 @@ $mdTitleFontSize: 48px;
 $smTitleFontSize: 36px;
 $titleFontWeight: 700;
 
-$sectionTitleFontSize:48px;
-$smSectionTitleFontSize:36px;
+$sectionTitleFontSize: 48px;
+$smSectionTitleFontSize: 36px;
 $sectionTitleFontWeight: 700;
 
-$featureTitleFontSize:30px;
-$smFeatureTitleFontSize:24px;
+$sectionSubitleFontSize: 18px;
+$sectionSubtitleFontWeight: 400;
+
+$featureTitleFontSize: 30px;
+$smFeatureTitleFontSize: 24px;
 $featureTitleFontWeight: 700;
 
 $textFontSize: 18px;
@@ -32,3 +42,29 @@ $textFontWeight: 400;
 
 $featureTextFontSize: 16px;
 $featureTextFontWeight: 400;
+
+$messageFontSize: 18px;
+$messageFontWeight: 400;
+
+$authorFontSize: 18px;
+$authorFontWeight: 700;
+
+$authorJobFontSize: 14px;
+$authorJobFontWeight: 400;
+$authorJobTextColor: #6b7280;
+
+$metricValueFontSize: 36px;
+$mdMetricValueFontSize: 30px;
+$smMetricValueFontSize: 24px;
+$metricValueFontWeight: 700;
+
+$metricTypeFontSize: 16px;
+$smMetricTypeFontSize: 14px;
+$metricTypeFontWeight: 400;
+
+$getTheAppFontSize: 18px;
+$getTheAppFontWeight: 500;
+
+$creditsFontSize: 14px;
+$creditsFontWeight: 400;
+$creditsTextColor: #d1d5db;
