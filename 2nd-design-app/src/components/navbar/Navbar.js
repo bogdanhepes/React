@@ -1,41 +1,18 @@
 import React from "react";
 import "./Navbar.scss";
 
-import {
-  AppStoreLogo,
-  GooglePlayLogo,
-  LogoAndName,
-  MenuIcon,
-} from "../../global/Svgs";
+import { LogoAndName, MenuIcon } from "../../global/Svgs";
+import AppStore from "../../global/photos/AppStore.png";
+import GooglePlay from "../../global/photos/GooglePlay.png";
 const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg pb-6">
         <div className="container">
-          <LogoAndName/>
+          <LogoAndName />
           <div className="stores-md ms-auto me-4">
-            <label className="storeBadge me-3">
-              <div className="d-flex justify-content-center">
-                <div className="col-2">
-                  <GooglePlayLogo />
-                </div>
-                <div className="col-8.5 ps-2 d-flex flex-column">
-                  <div className="smallBadgeText">GET IT ON</div>
-                  <div className="bigBadgeText">Google Play</div>
-                </div>
-              </div>
-            </label>
-            <label className="storeBadge">
-              <div className="d-flex justify-content-center">
-                <div className="col-1.5">
-                  <AppStoreLogo />
-                </div>
-                <div className="col-6.5 ps-2 d-flex flex-column">
-                  <div className="smallBadgeText">Download on the</div>
-                  <div className="bigBadgeText">App Store</div>
-                </div>
-              </div>
-            </label>
+            <img className="storeBadge me-3" src={GooglePlay} alt="" />
+            <img className="storeBadge" src={AppStore} alt="" />
           </div>
           <button
             className="navbar-toggler"
@@ -71,54 +48,14 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="stores-sm mx-auto">
-                <label className="storeBadge me-3">
-                  <div className="d-flex justify-content-center">
-                    <div className="col-2">
-                      <GooglePlayLogo />
-                    </div>
-                    <div className="col-8.5 ps-2 d-flex flex-column">
-                      <div className="smallBadgeText">GET IT ON</div>
-                      <div className="bigBadgeText">Google Play</div>
-                    </div>
-                  </div>
-                </label>
-                <label className="storeBadge">
-                  <div className="d-flex justify-content-center">
-                    <div className="col-1.5">
-                      <AppStoreLogo />
-                    </div>
-                    <div className="col-6.5 ps-2 d-flex flex-column">
-                      <div className="smallBadgeText">Download on the</div>
-                      <div className="bigBadgeText">App Store</div>
-                    </div>
-                  </div>
-                </label>
+                <img className="storeBadge me-3" src={GooglePlay} alt="" />
+                <img className="storeBadge" src={AppStore} alt="" />
               </li>
             </ul>
           </div>
           <div className="stores-lg">
-            <label className="storeBadge me-3">
-              <div className="d-flex justify-content-center">
-                <div className="col-1.5">
-                  <GooglePlayLogo />
-                </div>
-                <div className="col-8.5 ps-2 d-flex flex-column">
-                  <div className="smallBadgeText">GET IT ON</div>
-                  <div className="bigBadgeText">Google Play</div>
-                </div>
-              </div>
-            </label>
-            <label className="storeBadge">
-              <div className="d-flex justify-content-center">
-                <div className="col-1.5">
-                  <AppStoreLogo />
-                </div>
-                <div className="col-6.5 ps-2 d-flex flex-column">
-                  <div className="smallBadgeText">Download on the</div>
-                  <div className="bigBadgeText">App Store</div>
-                </div>
-              </div>
-            </label>
+            <img className="storeBadge me-3" src={GooglePlay} alt="" />
+            <img className="storeBadge" src={AppStore} alt="" />
           </div>
         </div>
       </nav>

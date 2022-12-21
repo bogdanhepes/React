@@ -1,9 +1,28 @@
 @import "../../../global/Variables.scss";
 @import "../../../global/Components.scss";
 
+@media (max-width: $small) {
+  .hero03Container {
+    .title {
+      padding-top: 48px;
+    }
+  }
+}
+@media (min-width: $small) {
+  .hero03Container {
+    .title {
+      padding-top: 96px;
+    }
+  }
+}
+
 .hero03Container {
   padding-bottom: 95px;
-  background: $hero03BackgroundColor;
+  background: white;
+  circle {
+    filter: blur(25px);
+    -webkit-filter: blur(25px);
+  }
   .row {
     position: relative;
     z-index: 1;
@@ -18,10 +37,6 @@
         box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.69);
       }
     }
-
-    .title {
-      padding-top: 96px;
-    }
     .someText {
       padding-top: 16px;
       padding-bottom: 32px;
@@ -30,43 +45,4 @@
       padding-bottom: 80px;
     }
   }
-
-  // .custom-shape-divider-bottom-1670797282 {
-  //   // margin: -30px;
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   overflow: hidden;
-  //   line-height: 0;
-  //   transform: rotate(180deg);
-  // }
-
-  // .custom-shape-divider-bottom-1670797282 svg {
-  //   position: relative;
-  //   display: block;
-  //   width: calc(120% + 1.3px);
-  //   height: 235px;
-  //   transform: rotateY(180deg);
-  // }
-
-  // .custom-shape-divider-bottom-1670797282 .shape-fill {
-  //   fill: white;
-  // }
-
-  // /** For tablet devices **/
-  // @media (min-width: 768px) and (max-width: 1023px) {
-  //   .custom-shape-divider-bottom-1670797282 svg {
-  //     width: calc(180% + 1.3px);
-  //     height: 410px;
-  //   }
-  // }
-
-  // /** For mobile devices **/
-  // @media (max-width: 767px) {
-  //   .custom-shape-divider-bottom-1670797282 svg {
-  //     width: calc(165% + 1.3px);
-  //     height: 330px;
-  //   }
-  // }
 }

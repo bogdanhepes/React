@@ -1,6 +1,11 @@
 import React from "react";
-import { AppStoreLogo, GooglePlayLogo, Logo } from "../../global/Svgs";
 import "./Footer.scss";
+
+import { Logo } from "../../global/Svgs";
+
+import AppStore from "../../global/photos/AppStore.png";
+import GooglePlay from "../../global/photos/GooglePlay.png";
+
 const Footer = () => {
   return (
     <>
@@ -27,28 +32,8 @@ const Footer = () => {
             </div>
             <div className="col-6 col-xs-2 col-sm-3 col-md-3 col-lg-2">
               <div className="getTheApp">Get the App</div>
-              <label className="storeBadge me-2">
-                <div className="d-flex justify-content-center">
-                  <div className="col-2">
-                    <GooglePlayLogo />
-                  </div>
-                  <div className="col-8.5 ps-2 d-flex flex-column">
-                    <div className="smallBadgeText">GET IT ON</div>
-                    <div className="bigBadgeText">Google Play</div>
-                  </div>
-                </div>
-              </label>
-              <label className="storeBadge">
-                <div className="d-flex justify-content-center">
-                  <div className="col-1.5">
-                    <AppStoreLogo />
-                  </div>
-                  <div className="col-6.5 ps-2 d-flex flex-column">
-                    <div className="smallBadgeText">Download on the</div>
-                    <div className="bigBadgeText">App Store</div>
-                  </div>
-                </div>
-              </label>
+              <img className="storeBadge mb-3" src={GooglePlay} alt="" />
+              <img className="storeBadge" src={AppStore} alt="" />
             </div>
           </div>
         </div>

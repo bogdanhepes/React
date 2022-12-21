@@ -4,12 +4,15 @@ import "./Hero03.scss";
 import Navbar from "../../../components/navbar/Navbar.js";
 
 import iPhoneScreen from "../../../global/photos/iPhoneScreen.png";
-import { WatchVideoLogo } from "../../../global/Svgs";
+import { WatchVideoLogo, Background } from "../../../global/Svgs";
 
 const Hero03 = () => {
   return (
     <>
       <div className="hero03Container mx-auto">
+        <div >
+          <Background />
+        </div>
         <div className="container">
           <Navbar />
           <div className="row d-flex justify-content-between">
@@ -34,19 +37,6 @@ const Hero03 = () => {
             </div>
           </div>
         </div>
-        {/* <div className="custom-shape-divider-bottom-1670797282 mt-5">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-              className="shape-fill"
-            ></path>
-          </svg>
-        </div> */}
       </div>
     </>
   );
