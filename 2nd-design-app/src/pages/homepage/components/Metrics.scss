@@ -1,0 +1,31 @@
+@import "../../../global/Variables.scss";
+
+@media (max-width: $small) {
+  .metricsContainer {
+    padding-bottom: 56px;
+    .col-sm-6 {
+      margin-bottom: 24px;
+    }
+  }
+}
+@media (max-width: $large) {
+  .metricsContainer {
+    .sectionSubtitle {
+      padding-bottom: 48px;
+    }
+  }
+}
+@media (min-width: $small) {
+  .metricsContainer {
+    .up {
+      margin-bottom: 40px;
+    }
+  }
+}
+.metricsContainer {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  .symbol {
+    padding-right: 16px;
+  }
+}

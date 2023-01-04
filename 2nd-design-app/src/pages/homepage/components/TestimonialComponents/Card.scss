@@ -1,0 +1,15 @@
+@import "../../../../global/Variables.scss";
+@import "../../../../global/Components.scss";
+
+.card {
+  padding: 32px;
+  .logo {
+    padding-bottom: 32px;
+  }
+  .cardQuoteMark {
+    padding-right: 16px;
+  }
+  .message {
+    padding-bottom: 24px;
+  }
+}

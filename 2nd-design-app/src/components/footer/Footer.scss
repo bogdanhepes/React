@@ -1,0 +1,27 @@
+@import "../../global/Components.scss";
+@import "../../global/Variables.scss";
+
+@media (max-width: $small) {
+  .footerContainer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .getTheApp{
+        padding-top: 32px;
+    }
+  }
+}
+@media (min-width: $small) {
+  .footerContainer {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.footerContainer {
+  background-color: black;
+  color: white;
+  .getTheApp {
+    color: white;
+    padding-bottom: 16px;
+  }
+}

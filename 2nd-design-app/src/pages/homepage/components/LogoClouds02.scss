@@ -1,0 +1,140 @@
+@import "../../../global/Variables.scss";
+
+//media queries pentru semicerc
+@media (max-width: 395px) {
+  .logoClouds02Container {
+    .container {
+      .row {
+        .col-lg-6 {
+          .right {
+            .row {
+              .col-lg-6 {
+                .svgContent {
+                  max-width: 280px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 395px) and (max-width: $medium) {
+  .logoClouds02Container {
+    .container {
+      .row {
+        .col-lg-6 {
+          .right {
+            .row {
+              .col-lg-6 {
+                .svgContent {
+                  max-width: 500px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $medium) and (max-width: $large) {
+  .logoClouds02Container {
+    .container {
+      .row {
+        .col-lg-6 {
+          .right {
+            .row {
+              .col-lg-6 {
+                .svgContent {
+                  max-width: 300px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $large) {
+  .logoClouds02Container {
+    .container {
+      .row {
+        .col-lg-6 {
+          .right {
+            .row {
+              .col-lg-6 {
+                .svgContent {
+                  max-width: 430px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//restul de media queries
+@media (max-width: $xlarge) {
+  .logoClouds02Container {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    .sectionTitle {
+      padding-top: 20px;
+    }
+    .sectionSubtitle {
+      padding-bottom: 20px;
+    }
+    .right {
+      padding: 0px 30px 0px 30px;
+    }
+  }
+}
+@media (min-width: $xlarge) {
+  .logoClouds02Container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    .right {
+      padding: 0px 60px 0px 60px;
+    }
+  }
+}
+@media (min-width: $xxlarge) {
+  .logoClouds02Container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    .sectionTitle {
+      padding-top: 40px;
+    }
+    .sectionSubtitle {
+      padding-bottom: 40px;
+    }
+    .right {
+      padding: 0px 120px 0px 120px;
+    }
+  }
+}
+
+.logoClouds02Container {
+  .container {
+    border-top: solid 1px #f3f4f6;
+    .row {
+      .col-lg-6 {
+        .right {
+          .row {
+            .col-lg-6 {
+              position: absolute;
+            }
+            .col-3 {
+              position: relative;
+            }
+          }
+        }
+      }
+    }
+  }
+}

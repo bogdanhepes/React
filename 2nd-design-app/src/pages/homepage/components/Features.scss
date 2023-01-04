@@ -1,0 +1,38 @@
+@import "../../../global/Variables.scss";
+@import "../../../global/Components.scss";
+
+.featuresContainer {
+  padding-bottom: 96px;
+  .container {
+    .sectionSubtitle {
+      padding-bottom: 50px;
+      max-width: 720px;
+    }
+    .col-12 {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      .featureTitle {
+        padding-top: 24px;
+      }
+      .featureText {
+        max-width: 340px;
+      }
+    }
+  }
+}
+
+@media (min-width: $medium) and (max-width: $large) {
+  .featuresContainer {
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: $medium) {
+  .featuresContainer {
+    padding-bottom: 48px;
+    .container {
+      .sectionTitle {
+        max-width: 200px;
+      }
+    }
+  }
+}

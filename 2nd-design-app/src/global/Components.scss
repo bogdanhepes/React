@@ -1,0 +1,156 @@
+@import "./Variables.scss";
+
+@media (min-width: $medium) and (max-width: $large) {
+  .title {
+    font-size: $mdTitleFontSize;
+  }
+  .sectionTitle {
+    font-size: $smSectionTitleFontSize;
+  }
+  .featureTitle {
+    font-size: $smFeatureTitleFontSize;
+  }
+  .metricValue {
+    font-size: $mdMetricValueFontSize;
+  }
+  .metricType {
+    font-size: $smMetricTypeFontSize;
+  }
+}
+@media (max-width: $medium) {
+  .title {
+    font-size: $smTitleFontSize;
+  }
+  .sectionTitle {
+    font-size: $smSectionTitleFontSize;
+  }
+  .featureTitle {
+    font-size: $smFeatureTitleFontSize;
+  }
+  .metricValue {
+    font-size: $smMetricValueFontSize;
+  }
+  .metricType {
+    font-size: $smMetricTypeFontSize;
+  }
+}
+
+@media (min-width: $large) {
+  .title {
+    font-size: $titleFontSize;
+  }
+  .sectionTitle {
+    font-size: $sectionTitleFontSize;
+  }
+  .featureTitle {
+    font-size: $featureTitleFontSize;
+  }
+  .metricValue {
+    font-size: $metricValueFontSize;
+  }
+  .metricType {
+    font-size: $metricTypeFontSize;
+  }
+}
+.storeBadge {
+  width: 134px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.filledBtn {
+  border-radius: 8px;
+  padding: 16px 24px;
+  background-color: $filledButtonColor;
+  color: white;
+  font-weight: $btnFontWeight;
+}
+.filledBtn:hover {
+  border: solid $filledButtonColor;
+  background-color: white;
+  color: $filledButtonColor;
+}
+
+.emptyBtn {
+  border-radius: 8px;
+  padding: 16px 24px;
+  color: $filledButtonColor;
+  font-weight: $btnFontWeight;
+}
+.emptyBtn:hover {
+  background-color: $filledButtonColor;
+  color: white;
+  svg {
+    path {
+      stroke: white;
+    }
+  }
+}
+
+.title {
+  font-weight: $titleFontWeight;
+  color: $primaryTextColor;
+}
+.sectionTitle {
+  font-weight: $sectionTitleFontWeight;
+  color: $primaryTextColor;
+}
+.featureTitle {
+  font-weight: $featureTitleFontWeight;
+  color: $primaryTextColor;
+}
+
+.sectionSubtitle {
+  font-size: $sectionSubitleFontSize;
+  font-weight: $sectionSubtitleFontWeight;
+  color: $primaryTextColor;
+}
+
+.someText {
+  font-size: $textFontSize;
+  font-weight: $textFontWeight;
+  color: $secondaryTextColor;
+}
+.featureText {
+  font-size: $featureTextFontSize;
+  font-weight: $featureTextFontWeight;
+  color: $secondaryTextColor;
+}
+
+.message {
+  font-size: $messageFontSize;
+  font-weight: $messageFontWeight;
+  color: $primaryTextColor;
+}
+.author {
+  font-size: $authorFontSize;
+  font-weight: $authorFontWeight;
+  color: $primaryTextColor;
+}
+.authorJob {
+  font-size: $authorJobFontSize;
+  font-weight: $authorJobFontWeight;
+  color: $authorJobTextColor;
+}
+
+.metricValue {
+  font-weight: $metricValueFontWeight;
+  color: $primaryTextColor;
+}
+
+.metricType {
+  font-weight: $metricTypeFontWeight;
+  color: $primaryTextColor;
+}
+
+.getTheApp {
+  font-size: $getTheAppFontSize;
+  font-weight: $getTheAppFontWeight;
+  color: $primaryTextColor;
+}
+
+.credits {
+  font-size: $creditsFontSize;
+  font-weight: $creditsFontWeight;
+  color: $creditsTextColor;
+}

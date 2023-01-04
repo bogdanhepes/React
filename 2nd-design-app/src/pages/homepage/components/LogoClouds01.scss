@@ -1,0 +1,24 @@
+@import "../../../global/Variables.scss";
+
+@media (min-width: $large) {
+  .logoClouds01Container {
+    .row {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+.logoClouds01Container {
+  padding-bottom: 110px;
+  .container {
+    // padding-top: 41px;
+    // padding-bottom: 41px;
+    border-top: solid #e5e7eb 1px;
+    border-bottom: solid #e5e7eb 1px;
+    .col-6 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
