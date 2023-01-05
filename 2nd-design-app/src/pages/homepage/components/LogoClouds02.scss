@@ -3,77 +3,29 @@
 //media queries pentru semicerc
 @media (max-width: 395px) {
   .logoClouds02Container {
-    .container {
-      .row {
-        .col-lg-6 {
-          .right {
-            .row {
-              .col-lg-6 {
-                .svgContent {
-                  max-width: 280px;
-                }
-              }
-            }
-          }
-        }
-      }
+    .svgContent {
+      max-width: 280px;
     }
   }
 }
 @media (min-width: 395px) and (max-width: $medium) {
   .logoClouds02Container {
-    .container {
-      .row {
-        .col-lg-6 {
-          .right {
-            .row {
-              .col-lg-6 {
-                .svgContent {
-                  max-width: 500px;
-                }
-              }
-            }
-          }
-        }
-      }
+    .svgContent {
+      max-width: 500px;
     }
   }
 }
 @media (min-width: $medium) and (max-width: $large) {
   .logoClouds02Container {
-    .container {
-      .row {
-        .col-lg-6 {
-          .right {
-            .row {
-              .col-lg-6 {
-                .svgContent {
-                  max-width: 300px;
-                }
-              }
-            }
-          }
-        }
-      }
+    .svgContent {
+      max-width: 300px;
     }
   }
 }
 @media (min-width: $large) {
   .logoClouds02Container {
-    .container {
-      .row {
-        .col-lg-6 {
-          .right {
-            .row {
-              .col-lg-6 {
-                .svgContent {
-                  max-width: 430px;
-                }
-              }
-            }
-          }
-        }
-      }
+    .svgContent {
+      max-width: 430px;
     }
   }
 }
@@ -124,15 +76,11 @@
     border-top: solid 1px #f3f4f6;
     .row {
       .col-lg-6 {
-        .right {
-          .row {
-            .col-lg-6 {
-              position: absolute;
-            }
-            .col-3 {
-              position: relative;
-            }
-          }
+        .col-lg-6 {
+          position: absolute;
+        }
+        .col-3 {
+          position: relative;
         }
       }
     }
