@@ -2,18 +2,18 @@ import React, { useEffect } from "react";
 import "./Header.scss";
 
 import { Logo } from "../global/SvgComponents.js";
-import SignInModal from "../modals/signIn/SignInModal";
-import SignUpModal from "../modals/signUp/SignUpModal";
+// import SignInModal from "../modals/signIn/SignInModal";
+// import SignUpModal from "../modals/signUp/SignUpModal";
 import { Link } from "react-router-dom";
 
 import { useDispatch} from "react-redux";
-import { getUsers } from "../../redux/users/UsersActions";
+// import { getUsers } from "../../redux/users/UsersActions";
 
 const Header = () => {
   let dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getUsers());
+    // dispatch(getUsers());
   }, [dispatch]);
 
   return (
@@ -65,21 +65,21 @@ const Header = () => {
             <div className="navbar-nav d-flex justify-content-between align-items-center">
               <a
                 className="nav-link"
-                data-bs-toggle="modal"
-                data-bs-target="#signInModal"
+                // data-bs-toggle="modal"
+                // data-bs-target="#signInModal"
                 href="/"
               >
                 Sign In
               </a>
               <button
                 className="button1 btn btn-outline-danger mx-auto"
-                data-bs-toggle="modal"
-                data-bs-target="#signUpModal"
+                // data-bs-toggle="modal"
+                // data-bs-target="#signUpModal"
               >
                 Sign Up
               </button>
-              <SignInModal />
-              <SignUpModal />
+              {/* <SignInModal />
+              <SignUpModal /> */}
             </div>
           </div>
         </div>

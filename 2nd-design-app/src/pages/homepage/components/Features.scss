@@ -3,21 +3,17 @@
 
 .featuresContainer {
   padding-bottom: 96px;
-  .container {
-    .sectionSubtitle {
-      padding-bottom: 50px;
-      max-width: 720px;
-    }
-    .col-12 {
-      padding-top: 24px;
-      padding-bottom: 24px;
-      .featureTitle {
-        padding-top: 24px;
-      }
-      .featureText {
-        max-width: 340px;
-      }
-    }
+  .sectionSubtitle {
+    padding-bottom: 50px;
+    max-width: 720px;
+  }
+  padding-top: 24px;
+  padding-bottom: 24px;
+  .featureTitle {
+    padding-top: 24px;
+  }
+  .featureText {
+    max-width: 340px;
   }
 }
 
@@ -29,10 +25,8 @@
 @media (max-width: $medium) {
   .featuresContainer {
     padding-bottom: 48px;
-    .container {
-      .sectionTitle {
-        max-width: 200px;
-      }
+    .sectionTitle {
+      max-width: 200px;
     }
   }
 }

@@ -26,12 +26,6 @@ const LogoClouds02 = () => {
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">
               <div className="right">
-                {/* <div className="col-12">
-                  <svg viewBox="0 0 480 270" className="svgContent w-100">
-                    <path d="M0,0 a1,1 0 0,0 340,0" fill="#EDE9FE" />
-                  </svg>
-                </div> */}
-
                 <div className="row d-flex justify-content-center text-center">
                   <div className="col-lg-6 col-md-6 col-sm-12">
                     <svg viewBox="0 0 420 270" className="svgContent">

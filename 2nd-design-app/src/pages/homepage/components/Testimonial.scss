@@ -5,26 +5,23 @@
   .testimonialContainer {
     padding-top: 95px;
     padding-bottom: 48px;
-    .container {
-      .quoteMark {
-        padding-left: -5px;
-      }
-      .row {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+    .quoteMark {
+      padding-left: -5px;
+    }
+    .row {
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 }
+
 @media (min-width: $small) and (max-width: $xxlarge) {
   .testimonialContainer {
     padding-top: 120px;
     padding-bottom: 80px;
-    .container {
-      .row {
-        padding-left: 0px;
-        padding-right: 0px;
-      }
+    .row {
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 }
@@ -32,51 +29,44 @@
   .testimonialContainer {
     padding-top: 120px;
     padding-bottom: 96px;
-    .container {
-      .quoteMark {
-        margin-left: 25px;
-      }
-      .row {
-        padding-left: 130px;
-        padding-right: 130px;
-      }
+    .quoteMark {
+      margin-left: 25px;
+    }
+    .row {
+      padding-left: 130px;
+      padding-right: 130px;
     }
   }
 }
+
 @media (min-width: $large) {
   .testimonialContainer {
-    .container {
-      .row {
-        .left {
-          width: 384px;
-          margin-top: -190px;
-          margin-left: auto;
-          margin-right: 40px;
-        }
-        .right {
-          width: 384px;
-          margin-right: auto;
-        }
-        .col-lg-4 {
-          width: 460px;
-          margin-top: 20px;
-          margin-bottom: 8px;
-          margin-right: auto;
-          margin-left: 20px;
-        }
-      }
+    .left {
+      width: 384px;
+      margin-top: -190px;
+      margin-left: auto;
+      margin-right: 40px;
+    }
+    .right {
+      width: 384px;
+      margin-right: auto;
+    }
+    .col-lg-4 {
+      width: 460px;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      margin-right: auto;
+      margin-left: 20px;
     }
   }
 }
 .testimonialContainer {
   background-color: $testimonialSectionColor;
-  .container {
-    .sectionTitle {
-      position: relative;
-    }
-    .quoteMark {
-      position: absolute;
-      margin-top: -55px;
-    }
+  .sectionTitle {
+    position: relative;
+  }
+  .quoteMark {
+    position: absolute;
+    margin-top: -55px;
   }
 }
