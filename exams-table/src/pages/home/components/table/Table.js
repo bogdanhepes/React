@@ -6,50 +6,49 @@ import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import update from "immutability-helper";
 
-const Table = () => {
-  const subjects = [
-    {
-      id: 1,
-      subject: "TS",
-      labTestDate: "17.01.2023",
-      labTestGrade: "0",
-      mainExamDate: "26.01.2023",
-      mainExamGrade: "0",
-      credits: "2",
-      finalGrade: "10",
-    },
-    {
-      id: 2,
-      subject: "SED",
-      labTestDate: "19.01.2023",
-      labTestGrade: "0",
-      mainExamDate: "20.01.2023",
-      mainExamGrade: "0",
-      credits: "1",
-      finalGrade: "5",
-    },
-    {
-      id: 3,
-      subject: "IRA",
-      labTestDate: "11.01.2023",
-      labTestGrade: "0",
-      mainExamDate: "07.02.2023",
-      mainExamGrade: "0",
-      credits: "5",
-      finalGrade: "8",
-    },
-    {
-      id: 4,
-      subject: "LE",
-      labTestDate: "19.01.2023",
-      labTestGrade: "0",
-      mainExamDate: "03.02.2023",
-      mainExamGrade: "0",
-      credits: "4",
-      finalGrade: "9",
-    },
-  ];
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import {
+  deleteSubject,
+  getSubject,
+  getSubjects,
+} from "../../../../redux/actions/subjects";
+import EditModal from "../../../../components/editModal/EditModal";
 
+const Table = () => {
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const handleDelete = (id) => {
+    setLoading(true);
+    dispatch(deleteSubject(id))
+      .then(() => {
+        dispatch(getSubjects())
+          .then(() => {
+            setLoading(false);
+          })
+          .catch(() => {
+            setLoading(false);
+            console.log("error getting subjects");
+          });
+      })
+      .catch(() => {
+        setLoading(false);
+        console.log("error deleting");
+      });
+  };
+  const handleUpdate = (id) => {
+    setLoading(true);
+    dispatch(getSubject(id))
+      .then(() => {
+        setLoading(false);
+        console.log("success");
+      })
+      .catch(() => {
+        setLoading(false);
+        console.log("error getting subject");
+      });
+  };
   const columns = React.useMemo(
     () => [
       {
@@ -58,8 +57,9 @@ const Table = () => {
       },
       {
         Header: "LAB TEST DATE",
-
         accessor: "labTestDate",
+        Cell: ({ cell }) =>
+          (cell.value = new Date(cell.value).toLocaleDateString()),
       },
       {
         Header: "LAB TEST GRADE",
@@ -68,6 +68,8 @@ const Table = () => {
       {
         Header: "MAIN EXAM DATE",
         accessor: "mainExamDate",
+        Cell: ({ cell }) =>
+          (cell.value = new Date(cell.value).toLocaleDateString()),
       },
       {
         Header: "MAIN EXAM GRADE",
@@ -99,18 +101,35 @@ const Table = () => {
       {
         Header: "EDIT",
         disableSortBy: true,
-        Cell: <i className="bi bi-pencil-fill"></i>,
+        Cell: ({ row }) => (
+          <i
+            className="bi bi-pencil-fill"
+            data-bs-toggle="modal"
+            data-bs-target="#editModal"
+            onClick={() => handleUpdate(parseInt(row.id))}
+          ></i>
+        ),
       },
       {
         Header: "DELETE",
         disableSortBy: true,
-        Cell: <i className="bi bi-trash3-fill"></i>,
+        Cell: ({ row }) => (
+          <i
+            className="bi bi-trash3-fill"
+            onClick={() => handleDelete(parseInt(row.id))}
+          ></i>
+        ),
       },
     ],
     []
   );
 
-  const [records, setRecords] = React.useState(subjects);
+  const { subjects } = useSelector((state) => state.subjects);
+  const [records, setRecords] = useState([]);
+  useEffect(() => {
+    setRecords(subjects);
+    //eslint-disable-next-line
+  }, [subjects]);
 
   const getRowId = React.useCallback((row) => {
     return row.id;
@@ -125,7 +144,7 @@ const Table = () => {
     prepareRow,
   } = useTable(
     {
-      data: records,
+      data: records ? records : subjects,
       columns,
       getRowId,
     },
@@ -209,8 +228,12 @@ const Table = () => {
         <td ref={dragRef}>
           <i className="bi bi-arrows-move"></i>
         </td>
-        {row.cells.map((cell) => {
-          return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+        {row.cells.map((cell, index) => {
+          return (
+            <td {...cell.getCellProps()} className={"column" + (index + 1)}>
+              {cell.render("Cell")}
+            </td>
+          );
         })}
       </tr>
     );
@@ -220,73 +243,78 @@ const Table = () => {
     <>
       <div className="tableContainer">
         <div className="container pt-5">
-          <div className="table-responsive">
-            <DndProvider backend={HTML5Backend}>
-              <table
-                {...getTableProps()}
-                className="table text-center table-bordered"
-              >
-                <thead className="table-dark ">
-                  {headerGroups.map((headerGroup) => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
-                      <th></th>
-                      {headerGroup.headers.map((column) => (
-                        <th
-                          {...column.getHeaderProps(
-                            column.getSortByToggleProps()
-                          )}
-                        >
-                          {column.render("Header")}
-                          <span>
-                            {column.canSort ? (
-                              column.isSorted ? (
-                                column.isSortedDesc ? (
-                                  <i className="bi bi-caret-down-fill"></i>
+          {loading ? (
+            "loading..."
+          ) : (
+            <div className="table-responsive">
+              <DndProvider backend={HTML5Backend}>
+                <table
+                  {...getTableProps()}
+                  className="table text-center table-bordered"
+                >
+                  <thead className="table-dark ">
+                    {headerGroups.map((headerGroup) => (
+                      <tr {...headerGroup.getHeaderGroupProps()}>
+                        <th></th>
+                        {headerGroup.headers.map((column) => (
+                          <th
+                            {...column.getHeaderProps(
+                              column.getSortByToggleProps()
+                            )}
+                          >
+                            {column.render("Header")}
+                            <span>
+                              {column.canSort ? (
+                                column.isSorted ? (
+                                  column.isSortedDesc ? (
+                                    <i className="bi bi-caret-down-fill"></i>
+                                  ) : (
+                                    <i className="bi bi-caret-up-fill"></i>
+                                  )
                                 ) : (
-                                  <i className="bi bi-caret-up-fill"></i>
+                                  <i className="bi bi-caret-right-fill"></i>
                                 )
                               ) : (
-                                <i className="bi bi-caret-right-fill"></i>
-                              )
-                            ) : (
-                              ""
-                            )}
-                          </span>
-                        </th>
-                      ))}
-                    </tr>
-                  ))}
-                </thead>
-                <tbody {...getTableBodyProps()}>
-                  {rows.map(
-                    (row, index) =>
-                      prepareRow(row) || (
-                        <Row
-                          index={index}
-                          row={row}
-                          moveRow={moveRow}
-                          {...row.getRowProps()}
-                        />
-                      )
-                  )}
-                </tbody>
-                <tfoot>
-                  {footerGroups.map((group) => (
-                    <tr {...group.getFooterGroupProps()}>
-                      <td></td>
-                      {group.headers.map((column) => (
-                        <td {...column.getFooterProps()}>
-                          {column.render("Footer")}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tfoot>
-              </table>
-            </DndProvider>
-          </div>
+                                ""
+                              )}
+                            </span>
+                          </th>
+                        ))}
+                      </tr>
+                    ))}
+                  </thead>
+                  <tbody {...getTableBodyProps()}>
+                    {rows.map(
+                      (row, index) =>
+                        prepareRow(row) || (
+                          <Row
+                            index={index}
+                            row={row}
+                            moveRow={moveRow}
+                            {...row.getRowProps()}
+                          />
+                        )
+                    )}
+                  </tbody>
+                  <tfoot>
+                    {footerGroups.map((group) => (
+                      <tr {...group.getFooterGroupProps()}>
+                        <td></td>
+                        {group.headers.map((column) => (
+                          <td {...column.getFooterProps()}>
+                            {column.render("Footer")}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tfoot>
+                </table>
+              </DndProvider>
+            </div>
+          )}
         </div>
       </div>
+      <EditModal />
     </>
   );
 };
